@@ -1,4 +1,6 @@
 import "./App.scss";
+import Navbar from "./components/navbar/navbar";
+import MenuButton from "./components/menu-button/menu-button";
 
 function App() {
   const toggleTheme = () => {
@@ -11,28 +13,9 @@ function App() {
   return (
     <>
       <header>
-        <nav>
-          <a href="#hero">home</a>
-          <a href="#projects" className="nav-link">
-            See what I've built
-          </a>
-          <a href="#cv" className="nav-link">
-            Peek at my CV
-          </a>
-          <a href="#about" className="nav-link">
-            About me
-          </a>
-          <a href="#contact" className="nav-link">
-            Get in touch
-          </a>
-        </nav>
+        <Navbar />
 
-        <div className="toggle-container">
-          <button className="toggle-button" onClick={() => toggleTheme()}>
-            lig dar
-          </button>
-          <button className="toggle-button">LAN</button>
-        </div>
+        <MenuButton />
       </header>
 
       <main>
