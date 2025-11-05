@@ -1,21 +1,29 @@
 /* ---------------- VARIABLES ------------------ */
-$breakpoint-xs: 400px;
+$breakpoint-xs: 480px;
 $breakpoint-sm: 600px;
+$breakpoint-md: 768px;
+$breakpoint-md-lg: 880px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1300px;
 
 :root {
   --background: #f8f9fa;
+  --container-background: #ffffff;
   --primary-text: #1a1a1a;
   --secondary-text: #555555;
-  --accent: #03a062;
-  --border: #e5e5e5;
+  --accent: #ffd166;
+  --border: #d0d0d0;
+  --primary-font: "Montserrat", sans-serif;
 }
 
 [data-theme="dark"] {
   --background: #121212;
+  --container-background: #252525;
   --primary-text: #eaeaea;
   --secondary-text: #a8a8a8;
-  --accent: #03a062;
-  --border: #2a2a2a;
+  --accent: #eaeaea;
+  --border: #3a3a3a;
+  --glow: 0 0 4px var(--primary-text), 0 0 16px var(--primary-text);
 }
 
 /* ------------------ RESET ---------------- */
@@ -69,9 +77,6 @@ select {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: "Inter", system-ui, sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {

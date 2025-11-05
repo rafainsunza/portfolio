@@ -2,26 +2,23 @@ import { useState } from "react";
 import "./navbar.scss";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className={isOpen ? "navbar open" : "navbar"}>
-      <div className="navbar__grabber"></div>
+    <div className="navbar">
       <nav>
         <a href="#hero" className="navbar__nav-link">
-          home
+          HOME
         </a>
         <a href="#projects" className="navbar__nav-link">
-          See what I've built
+          SEE WHAT I'VE BUILT
         </a>
         <a href="#cv" className="navbar__nav-link">
-          Peek at my CV
+          PEEK AT MY CV
         </a>
         <a href="#about" className="navbar__nav-link">
-          About me
+          ABOUT ME
         </a>
         <a href="#contact" className="navbar__nav-link">
-          Get in touch
+          GET IN TOUCH
         </a>
       </nav>
 

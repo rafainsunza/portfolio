@@ -2,4 +2,8 @@
 
 .menu-button {
   background-color: yellow;
+
+  @media (min-width: $breakpoint-md-lg) {
+    display: none;
+  }
 }
