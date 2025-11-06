@@ -1,9 +1,66 @@
 @import "../../index.scss";
 
 .menu-button {
-  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-md) {
+    right: 20px;
+  }
 
   @media (min-width: $breakpoint-md-lg) {
     display: none;
+  }
+
+  &:hover {
+    & .menu-button__bar {
+      box-shadow: var(--glow);
+    }
+  }
+
+  &__bar {
+    background-color: var(--primary-text);
+    border-radius: 10px;
+    height: 3px;
+    margin: 2px 0;
+    transition: box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    &:nth-of-type(1) {
+      width: 50%;
+    }
+
+    &:nth-of-type(2) {
+      width: 100%;
+    }
+
+    &:nth-of-type(3) {
+      width: 75%;
+    }
+  }
+
+  &.toggled {
+    & .menu-button__bar {
+      &:nth-of-type(1) {
+        transform-origin: bottom;
+        transform: rotateZ(45deg) translate(5px, -3px);
+      }
+
+      &:nth-of-type(2) {
+        transform-origin: top;
+        transform: rotateZ(-45deg);
+      }
+
+      &:nth-of-type(3) {
+        transform-origin: bottom;
+        width: 50%;
+        transform: rotateZ(45deg) translate(9px, -13px);
+      }
+    }
   }
 }

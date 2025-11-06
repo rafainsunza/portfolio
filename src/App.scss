@@ -16,14 +16,18 @@ body {
 header {
   position: sticky;
   top: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 10px;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 20px;
+  }
 
   @media (min-width: $breakpoint-md-lg) {
     height: 75px;
+    padding: 0;
   }
-  //////////////////
-  display: flex;
-  justify-content: flex-end;
-  ///////////////////////
 }
 
 section {
