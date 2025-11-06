@@ -17,7 +17,7 @@ header {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 20px 10px;
 
   @media (min-width: $breakpoint-md) {
@@ -34,11 +34,11 @@ section {
   height: 100dvh;
   width: 100%;
   max-width: $breakpoint-xl;
-  padding: 20px 10px 20px 10px;
+  padding: 95px 10px 20px 10px;
   scroll-snap-align: start;
 
   @media (min-width: $breakpoint-md) {
-    padding: 20px;
+    padding: 95px 20px 20px 20px;
   }
 
   @media (min-width: $breakpoint-md-lg) {

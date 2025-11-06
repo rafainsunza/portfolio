@@ -1,8 +1,12 @@
 import "./App.scss";
 import Navbar from "./components/navbar/navbar";
 import MenuButton from "./components/menu-button/menu-button";
+import Branding from "./components/branding/branding";
+import { useState } from "react";
 
 function App() {
+  const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
+
   const toggleTheme = () => {
     const htmlElement = document.documentElement;
     const isDarkMode = htmlElement.hasAttribute("data-theme");
@@ -13,9 +17,13 @@ function App() {
   return (
     <>
       <header>
-        <Navbar />
+        <a href="#hero">
+          <Branding hideOnDesktop />
+        </a>
 
-        <MenuButton />
+        <Navbar isOpen={mobileNavIsOpen} />
+
+        <MenuButton isToggled={mobileNavIsOpen} setIsToggled={setMobileNavIsOpen} />
       </header>
 
       <main>

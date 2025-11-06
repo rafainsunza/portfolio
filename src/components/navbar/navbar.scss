@@ -24,6 +24,8 @@
     width: 80%;
     height: 100%;
     padding: 20px;
+    border: none;
+    border-right: 1px solid var(--border);
     border-radius: 0;
   }
 
@@ -40,7 +42,7 @@
     padding: 0 20px;
     border: none;
     border-radius: 0;
-    background-color: transparent;
+    background-color: var(--background);
   }
 
   @media (min-width: $breakpoint-lg) {
@@ -64,18 +66,34 @@
     color: var(--secondary-text);
     transition: color 0.3s ease, text-shadow 0.3s ease;
 
+    @media (min-width: $breakpoint-md-lg) {
+      padding: 0;
+      font-size: 14px;
+    }
+
     &:hover {
       color: var(--primary-text);
       text-shadow: var(--glow);
     }
+  }
 
-    &:first-child {
-      color: var(--primary-text);
-      text-shadow: var(--glow);
-    }
+  &__center-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
     @media (min-width: $breakpoint-md-lg) {
-      padding: 0;
+      flex-direction: row;
+      margin-left: 10%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      gap: 40px;
+      margin-left: 15%;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      gap: 60px;
     }
   }
 
@@ -104,8 +122,10 @@ nav {
 
   @media (min-width: $breakpoint-md-lg) {
     flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
     position: static;
-    width: auto;
+    width: 100%;
     height: auto;
   }
 }

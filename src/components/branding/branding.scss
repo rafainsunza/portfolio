@@ -1,0 +1,25 @@
+@import "../../index.scss";
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__icon {
+    font-size: 24px;
+  }
+
+  &__name {
+    font-size: 10px;
+  }
+
+  &__role {
+    font-size: 9px;
+  }
+
+  &.display-none__desktop {
+    @media (min-width: $breakpoint-md-lg) {
+      display: none;
+    }
+  }
+}
