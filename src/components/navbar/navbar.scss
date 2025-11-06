@@ -64,7 +64,7 @@
   &__nav-link {
     padding: 10px 40px 10px 40px;
     color: var(--secondary-text);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 
     &:hover {
       color: var(--primary-text);
@@ -125,6 +125,12 @@ nav {
   flex-direction: column;
   gap: 40px;
 
+  @media (min-width: $breakpoint-xs) {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
   @media (min-width: $breakpoint-md-lg) {
     flex-direction: row;
     align-items: flex-end;
@@ -132,5 +138,7 @@ nav {
     position: static;
     width: 100%;
     height: auto;
+    border: none;
+    padding: 0;
   }
 }

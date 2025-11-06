@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 
 function App() {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
-
   const [activeSection, setActiveSection] = useState("hero");
 
   const sectionRefs = {
@@ -64,7 +63,7 @@ function App() {
           <Branding hideOnDesktop />
         </a>
 
-        <Navbar isOpen={mobileNavIsOpen} activeSection={activeSection} />
+        <Navbar isOpen={mobileNavIsOpen} activeSection={activeSection} setIsOpen={setMobileNavIsOpen} />
 
         <MenuButton isToggled={mobileNavIsOpen} setIsToggled={setMobileNavIsOpen} />
       </header>
