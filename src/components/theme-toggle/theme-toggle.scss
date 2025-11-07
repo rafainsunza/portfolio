@@ -6,7 +6,7 @@
     height: 30px;
     width: 60px;
     padding: 0;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 20px;
     background-color: var(--background);
     cursor: pointer;
@@ -24,7 +24,6 @@
     color: var(--background);
     font-size: 12px;
     transition: left 0.3s ease-in-out, background-color 0.3s ease;
-    // display: none;
 
     &.light {
       left: 57%;

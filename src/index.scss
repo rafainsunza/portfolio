@@ -10,10 +10,11 @@ $breakpoint-xl: 1300px;
   --background: #ececec;
   --container-background: #f8f8f8;
   --primary-text: #1e1e1e;
-  --secondary-text: #555555;
+  --secondary-text: #808080;
+  --accent: #f25623;
   --border: #d0d0d0;
   --primary-font: "Montserrat", sans-serif;
-  --glow: 0 0 1px var(--primary-text), 0 0 1px var(--primary-text);
+  --glow: 0 0 1px var(--primary-text), 0 0 1px var(--primary-text), 0 0 1px var(--primary-text);
 }
 
 [data-theme="dark"] {
@@ -22,7 +23,7 @@ $breakpoint-xl: 1300px;
   --primary-text: #eaeaea;
   --secondary-text: #a8a8a8;
   --border: #3a3a3a;
-  --glow: 0 0 4px var(--primary-text), 0 0 16px var(--primary-text);
+  --glow: 0 0 1px var(--primary-text), 0 0 10px var(--primary-text);
 }
 
 /* ------------------ RESET ---------------- */
