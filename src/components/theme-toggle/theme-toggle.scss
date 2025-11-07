@@ -1,0 +1,49 @@
+@import "../../index.scss";
+
+.theme-toggle {
+  &__button {
+    position: relative;
+    height: 30px;
+    width: 60px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background-color: var(--background);
+    cursor: pointer;
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 7.5px;
+    transform: translateY(-50%);
+    width: 17.5px;
+    height: 17.5px;
+    border-radius: 100%;
+    background-color: var(--primary-text);
+    color: var(--background);
+    font-size: 12px;
+    transition: left 0.3s ease-in-out, background-color 0.3s ease;
+    // display: none;
+
+    &.light {
+      left: 57%;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--primary-text);
+
+    &.light {
+      left: 57%;
+    }
+
+    &.dark {
+      left: 7.5px;
+    }
+  }
+}

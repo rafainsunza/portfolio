@@ -1,7 +1,8 @@
 import "./settings.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+import ThemeToggle from "../theme-toggle/theme-toggle";
 
 function Settings() {
   return (
@@ -9,6 +10,10 @@ function Settings() {
       <button className="settings__button">
         <FontAwesomeIcon icon={faGear} />
       </button>
+
+      <div className="settings__button-container">
+        <ThemeToggle />
+      </div>
     </div>
   );
 }

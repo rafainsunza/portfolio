@@ -7,21 +7,20 @@ $breakpoint-lg: 1024px;
 $breakpoint-xl: 1300px;
 
 :root {
-  --background: #f8f9fa;
-  --container-background: #ffffff;
-  --primary-text: #1a1a1a;
+  --background: #ececec;
+  --container-background: #f8f8f8;
+  --primary-text: #1e1e1e;
   --secondary-text: #555555;
-  --accent: #ffd166;
   --border: #d0d0d0;
   --primary-font: "Montserrat", sans-serif;
+  --glow: 0 0 1px var(--primary-text), 0 0 1px var(--primary-text);
 }
 
 [data-theme="dark"] {
   --background: #121212;
-  --container-background: #252525;
+  --container-background: #1e1e1e;
   --primary-text: #eaeaea;
   --secondary-text: #a8a8a8;
-  --accent: #eaeaea;
   --border: #3a3a3a;
   --glow: 0 0 4px var(--primary-text), 0 0 16px var(--primary-text);
 }

@@ -49,13 +49,6 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  // const toggleTheme = () => {
-  //   const htmlElement = document.documentElement;
-  //   const isDarkMode = htmlElement.hasAttribute("data-theme");
-
-  //   isDarkMode ? htmlElement.removeAttribute("data-theme", "dark") : htmlElement.setAttribute("data-theme", "dark");
-  // };
-
   return (
     <>
       <header>
