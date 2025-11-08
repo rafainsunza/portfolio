@@ -5,7 +5,7 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "../theme-toggle/theme-toggle";
 
-function Settings() {
+const Settings = () => {
   const [isOpen, setIsOpen] = useState(false);
   const settingsRef = useRef(null);
 
@@ -36,6 +36,6 @@ function Settings() {
       </div>
     </div>
   );
-}
+};
 
 export default Settings;

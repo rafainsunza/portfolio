@@ -4,8 +4,11 @@ import MenuButton from "./components/menu-button/menu-button";
 import Branding from "./components/branding/branding";
 import { useEffect, useRef, useState } from "react";
 
-function App() {
+const App = () => {
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
+  const navbarRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
   const [activeSection, setActiveSection] = useState("hero");
 
   const sectionRefs = {
@@ -15,6 +18,17 @@ function App() {
     about: useRef(null),
     contact: useRef(null),
   };
+
+  useEffect(() => {
+    if (!mobileNavIsOpen) return;
+
+    const handleOutsideClick = (e) => {
+      if (!navbarRef.current.contains(e.target) && !menuButtonRef.current.contains(e.target)) setMobileNavIsOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick, true);
+    return () => document.removeEventListener("mousedown", handleOutsideClick, true);
+  }, [mobileNavIsOpen]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,9 +70,9 @@ function App() {
           <Branding hideOnDesktop />
         </a>
 
-        <Navbar isOpen={mobileNavIsOpen} activeSection={activeSection} setIsOpen={setMobileNavIsOpen} />
+        <Navbar isOpen={mobileNavIsOpen} activeSection={activeSection} setIsOpen={setMobileNavIsOpen} ref={navbarRef} />
 
-        <MenuButton isToggled={mobileNavIsOpen} setIsToggled={setMobileNavIsOpen} />
+        <MenuButton isToggled={mobileNavIsOpen} setIsToggled={setMobileNavIsOpen} ref={menuButtonRef} />
       </header>
 
       <main>
@@ -85,6 +99,6 @@ function App() {
       <footer></footer>
     </>
   );
-}
+};
 
 export default App;

@@ -1,28 +1,15 @@
 import "./navbar.scss";
 import Branding from "../branding/branding";
 import Settings from "../settings/settings";
-import { useEffect, useRef } from "react";
+import React from "react";
 
-function Navbar({ isOpen, activeSection, setIsOpen }) {
-  const navbarRef = useRef(null);
-
+const Navbar = React.forwardRef(({ isOpen, activeSection, setIsOpen }, ref) => {
   const handleClick = () => {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleOutsideClick = (e) => {
-      if (!navbarRef.current.contains(e.target)) setIsOpen(false);
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick, true);
-    return () => document.removeEventListener("mousedown", handleOutsideClick, true);
-  }, [isOpen]);
-
   return (
-    <div className={`navbar ${isOpen ? "open" : ""}`} ref={navbarRef}>
+    <div className={`navbar ${isOpen ? "open" : ""}`} ref={ref}>
       <nav>
         <a
           href="#hero"
@@ -62,6 +49,6 @@ function Navbar({ isOpen, activeSection, setIsOpen }) {
       <Settings />
     </div>
   );
-}
+});
 
 export default Navbar;

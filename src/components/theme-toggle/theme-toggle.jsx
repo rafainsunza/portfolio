@@ -4,7 +4,7 @@ import "./theme-toggle.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
-function ThemeToggle() {
+const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => {
@@ -32,6 +32,6 @@ function ThemeToggle() {
       </button>
     </div>
   );
-}
+};
 
 export default ThemeToggle;

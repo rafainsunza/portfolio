@@ -3,7 +3,7 @@ import "./branding.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
-function Branding({ hideOnDesktop }) {
+const Branding = ({ hideOnDesktop }) => {
   const classNames = ["branding"];
   if (hideOnDesktop) classNames.push("display-none__desktop");
 
@@ -16,6 +16,6 @@ function Branding({ hideOnDesktop }) {
       </div>
     </div>
   );
-}
+};
 
 export default Branding;
