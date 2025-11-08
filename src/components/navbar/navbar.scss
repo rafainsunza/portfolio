@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   transform: translateY(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out 0.5s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,6 +55,7 @@
 
   &.open {
     transform: translateY(0);
+    transition-delay: 0s;
 
     @media (min-width: $breakpoint-xs) {
       transform: translateX(0);
@@ -104,6 +105,8 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
 
   @media (min-width: $breakpoint-xs) {
     padding: 60px 0;

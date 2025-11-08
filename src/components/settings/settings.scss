@@ -21,13 +21,47 @@
       display: block;
     }
 
-    &:hover {
+    &:hover,
+    &.open {
       color: var(--primary-text);
       transform: scale(1.1);
 
       & svg {
-        animation: spin 45s linear infinite;
+        animation: spin 10s linear infinite;
       }
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media (min-width: $breakpoint-md-lg) {
+      position: fixed;
+      right: 20px;
+      top: 65px;
+      display: none;
+      height: 120px;
+      gap: 5px;
+      padding: 10px;
+      background-color: var(--container-background);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+
+      &.open {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      right: 40px;
+    }
+
+    & button {
+      width: 60px;
+      height: 30px;
+      border-radius: 20px;
     }
   }
 }
@@ -38,6 +72,6 @@
   }
 
   to {
-    transform: rotate(3660deg);
+    transform: rotate(360deg);
   }
 }

@@ -1,14 +1,28 @@
 import "./navbar.scss";
 import Branding from "../branding/branding";
 import Settings from "../settings/settings";
+import { useEffect, useRef } from "react";
 
 function Navbar({ isOpen, activeSection, setIsOpen }) {
+  const navbarRef = useRef(null);
+
   const handleClick = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleOutsideClick = (e) => {
+      if (!navbarRef.current.contains(e.target)) setIsOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick, true);
+    return () => document.removeEventListener("mousedown", handleOutsideClick, true);
+  }, [isOpen]);
+
   return (
-    <div className={`navbar ${isOpen ? "open" : ""}`}>
+    <div className={`navbar ${isOpen ? "open" : ""}`} ref={navbarRef}>
       <nav>
         <a
           href="#hero"
