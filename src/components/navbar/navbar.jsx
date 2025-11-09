@@ -2,8 +2,11 @@ import "./navbar.scss";
 import Branding from "../branding/branding";
 import Settings from "../settings/settings";
 import React from "react";
+import { useTranslations } from "../../context/language-context";
 
 const Navbar = React.forwardRef(({ isOpen, activeSection, setIsOpen }, ref) => {
+  const { translation } = useTranslations();
+
   const handleClick = () => {
     setIsOpen(false);
   };
@@ -24,24 +27,24 @@ const Navbar = React.forwardRef(({ isOpen, activeSection, setIsOpen }, ref) => {
             className={`navbar__nav-link ${activeSection === "projects" ? "active" : ""}`}
             onClick={handleClick}
           >
-            SEE WHAT I'VE BUILT
+            {translation("navbar.projects")}
           </a>
           <a href="#cv" className={`navbar__nav-link ${activeSection === "cv" ? "active" : ""}`} onClick={handleClick}>
-            PEEK AT MY CV
+            {translation("navbar.cv")}
           </a>
           <a
             href="#about"
             className={`navbar__nav-link ${activeSection === "about" ? "active" : ""}`}
             onClick={handleClick}
           >
-            ABOUT ME
+            {translation("navbar.about")}
           </a>
           <a
             href="#contact"
             className={`navbar__nav-link ${activeSection === "contact" ? "active" : ""}`}
             onClick={handleClick}
           >
-            GET IN TOUCH
+            {translation("navbar.contact")}
           </a>
         </div>
       </nav>

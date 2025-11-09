@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "../theme-toggle/theme-toggle";
+import LanguageToggle from "../language-toggle/language-toggle";
 
 const Settings = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ const Settings = () => {
 
       <div className={`settings__button-container ${isOpen ? "open" : ""}`}>
         <ThemeToggle />
-        <button></button>
+        <LanguageToggle />
       </div>
     </div>
   );
