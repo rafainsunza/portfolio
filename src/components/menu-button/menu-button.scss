@@ -11,7 +11,7 @@
   cursor: pointer;
 
   @media (min-width: $breakpoint-md) {
-    right: 20px;
+    right: $space-sm;
   }
 
   @media (min-width: $breakpoint-md-lg) {

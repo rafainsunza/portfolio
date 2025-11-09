@@ -3,7 +3,7 @@
 .branding {
   display: flex;
   align-items: flex-end;
-  gap: 10px;
+  gap: $space-xs;
 
   &__icon {
     font-size: 24px;
