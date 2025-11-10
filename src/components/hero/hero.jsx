@@ -1,6 +1,7 @@
 import "./hero.scss";
 import portrait from "../../assets/images/cv-photo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SocialMediaBox from "../social-media-box/social-media-box";
 
 const Hero = () => {
   return (
@@ -12,6 +13,8 @@ const Hero = () => {
         </h1>
         <h2 className="hero__subtitle">I love turning designs into smooth, responsive websites.</h2>
       </div>
+
+      <SocialMediaBox />
 
       <div className="hero__image">
         <img src={portrait} alt="" />

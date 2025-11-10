@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+.social-media-box {
+  display: flex;
+  gap: $space-xs;
+  margin-top: $space-lg;
+
+  &__link {
+    color: var(--secondary-text);
+    font-size: 25px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary-text);
+      transform: scale(1.1);
+    }
+  }
+}
