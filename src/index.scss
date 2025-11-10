@@ -20,16 +20,18 @@ $font-size-md: 0.875rem; // 14px
 $font-size-base: 1rem; // 16px
 $font-size-lg: 1.3125rem; // 21px
 $font-size-xl: 1.5rem; // 24px
+$font-size-xxl: 4rem; // 64px
 
 :root {
   --background: #ececec;
   --container-background: #f8f8f8;
   --primary-text: #1e1e1e;
   --secondary-text: #808080;
-  --accent: #f25623;
+  --accent: #8e8558;
   --border: #d0d0d0;
-  --primary-font: "Montserrat", sans-serif;
   --glow: 0 0 1px var(--primary-text), 0 0 1px var(--primary-text), 0 0 1px var(--primary-text);
+  --primary-font: "Montserrat", sans-serif;
+  --secondary-font: "Archivo Black", sans-serif;
 }
 
 [data-theme="dark"] {

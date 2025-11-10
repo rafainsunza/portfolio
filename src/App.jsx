@@ -2,6 +2,7 @@ import "./App.scss";
 import Navbar from "./components/navbar/navbar";
 import MenuButton from "./components/menu-button/menu-button";
 import Branding from "./components/branding/branding";
+import Hero from "./components/hero/hero";
 import { useEffect, useRef, useState } from "react";
 
 const App = () => {
@@ -77,7 +78,7 @@ const App = () => {
 
       <main>
         <section id="hero" ref={sectionRefs.hero}>
-          HI IM RAFA
+          <Hero />
         </section>
 
         <section id="projects" ref={sectionRefs.projects}>

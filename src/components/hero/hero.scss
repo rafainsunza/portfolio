@@ -1,0 +1,63 @@
+@import "../../index.scss";
+
+.hero {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  height: 100%;
+
+  @media (min-width: $breakpoint-md-lg) {
+    grid-template-rows: auto auto;
+    grid-template-columns: max-content 1fr;
+    column-gap: $space-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    column-gap: 65px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    column-gap: 175px;
+  }
+
+  &__title-wrapper {
+    align-content: end;
+  }
+
+  &__title {
+    font-family: var(--secondary-font);
+    font-size: $font-size-xxl;
+    letter-spacing: -4px;
+    word-spacing: -10px;
+    line-height: 60px;
+    padding: $space-xs 0;
+
+    & br {
+      @media (min-width: $breakpoint-md-lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    letter-spacing: -1px;
+    word-spacing: -1px;
+    line-height: 20px;
+    color: var(--secondary-text);
+    font-weight: normal;
+  }
+
+  &__image {
+    margin: $space-lg auto 0 auto;
+    border-radius: 100%;
+    max-width: 250px;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-md-lg) {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      margin: 0;
+    }
+  }
+}
