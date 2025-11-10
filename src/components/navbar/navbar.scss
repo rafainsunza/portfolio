@@ -12,11 +12,12 @@
   gap: $space-lg;
   width: 100%;
   max-width: $breakpoint-xs;
-  height: 80%;
+  height: 90%;
   padding: $space-sm $space-xs;
   border: 1px solid var(--border);
   border-radius: 7.5px 7.5px 0 0;
   background-color: var(--container-background);
+  overflow-y: scroll;
 
   &.open {
     transform: translateY(0);
@@ -100,6 +101,11 @@
       color: var(--primary-text);
       text-shadow: var(--glow);
     }
+  }
+
+  & .settings__button-container {
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 
