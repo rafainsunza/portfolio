@@ -2,27 +2,10 @@
 
 .hero {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: repeat(3, max-content);
   align-content: center;
+  justify-content: center;
   height: 100%;
-
-  @media (min-width: $breakpoint-md-lg) {
-    grid-template-rows: auto auto;
-    grid-template-columns: max-content 1fr;
-    column-gap: $space-lg;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    column-gap: 65px;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    column-gap: 175px;
-  }
-
-  &__title-wrapper {
-    align-content: end;
-  }
 
   &__title {
     font-family: var(--secondary-font);
@@ -40,24 +23,12 @@
   }
 
   &__subtitle {
+    margin-bottom: $space-md;
     font-size: $font-size-lg;
     letter-spacing: -1px;
     word-spacing: -1px;
     line-height: 20px;
     color: var(--secondary-text);
     font-weight: normal;
-  }
-
-  &__image {
-    margin: $space-lg auto 0 auto;
-    border-radius: 100%;
-    max-width: 250px;
-    overflow: hidden;
-
-    @media (min-width: $breakpoint-md-lg) {
-      grid-column-start: 2;
-      grid-row-start: 1;
-      margin: 0;
-    }
   }
 }

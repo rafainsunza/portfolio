@@ -43,15 +43,15 @@ section {
   height: 100dvh;
   width: 100%;
   max-width: $breakpoint-xl;
-  padding: 95px $space-xs $space-sm $space-xs;
+  padding: 75px $space-xs $space-sm $space-xs;
   scroll-snap-align: start;
 
   @media (min-width: $breakpoint-md) {
-    padding: 95px $space-sm $space-sm $space-sm;
+    padding: 75px $space-sm $space-sm $space-sm;
   }
 
   @media (min-width: $breakpoint-lg) {
-    padding: 95px $space-lg $space-sm $space-lg;
+    padding: 75px $space-lg $space-sm $space-lg;
   }
 
   @media (min-width: $breakpoint-xl) {
