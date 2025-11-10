@@ -13,13 +13,13 @@ $space-md: 30px;
 $space-lg: 40px;
 $space-xl: 60px;
 
-$font-size-xxs: 9px;
-$font-size-xs: 10px;
-$font-size-sm: 12px;
-$font-size-md: 14px;
-$font-size-base: 16px;
-$font-size-lg: 21px;
-$font-size-xl: 24px;
+$font-size-xxs: 0.5625rem; // 9px
+$font-size-xs: 0.625rem; // 10px
+$font-size-sm: 0.75rem; // 12px
+$font-size-md: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.3125rem; // 21px
+$font-size-xl: 1.5rem; // 24px
 
 :root {
   --background: #ececec;
