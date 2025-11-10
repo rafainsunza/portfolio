@@ -10,11 +10,11 @@
   }
 
   &__name {
-    font-size: 10px;
+    font-size: $font-size-xs;
   }
 
   &__role {
-    font-size: 9px;
+    font-size: $font-size-xxs;
   }
 
   &.display-none__desktop {

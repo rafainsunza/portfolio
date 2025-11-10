@@ -92,7 +92,7 @@
 
     @media (min-width: $breakpoint-md-lg) {
       padding: $space-xs 0;
-      font-size: 14px;
+      font-size: $font-size-md;
     }
 
     &:hover,
