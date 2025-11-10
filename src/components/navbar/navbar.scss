@@ -67,6 +67,7 @@
     display: flex;
     flex-direction: column;
     gap: $space-md;
+    text-transform: uppercase;
 
     @media (min-width: $breakpoint-md-lg) {
       flex-direction: row;

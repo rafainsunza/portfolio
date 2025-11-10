@@ -18,6 +18,8 @@
   }
 
   &.display-none__desktop {
+    font-weight: bold;
+
     @media (min-width: $breakpoint-md-lg) {
       display: none;
     }
