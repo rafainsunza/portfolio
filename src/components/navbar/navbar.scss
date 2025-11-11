@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@use "../../index.scss" as *;
 
 .navbar {
   position: fixed;
@@ -54,6 +54,7 @@
     border: none;
     border-radius: 0;
     background-color: var(--background);
+    overflow-y: visible;
   }
 
   @media (min-width: $breakpoint-lg) {
@@ -106,6 +107,11 @@
   & .settings__button-container {
     flex-direction: row;
     justify-content: space-evenly;
+
+    @media (min-width: $breakpoint-md-lg) {
+      flex-direction: column;
+      justify-content: normal;
+    }
   }
 }
 

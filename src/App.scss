@@ -1,4 +1,4 @@
-@import "index";
+@use "index" as *;
 
 html {
   scroll-snap-type: y mandatory;
