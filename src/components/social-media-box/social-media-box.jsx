@@ -2,8 +2,11 @@ import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-i
 import "./social-media-box.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useTranslations } from "../../context/language-context";
 
 const SocialMediaBox = () => {
+  const { translation } = useTranslations();
+
   return (
     <div className="social-media-box">
       <a
@@ -23,7 +26,7 @@ const SocialMediaBox = () => {
         <FontAwesomeIcon icon={faGithub} />
       </a>
       <a
-        href="mailto:yourname@example.com?subject=Hello%20Rafael,%20we%20saw%20your%20portfolio%20and%20want%20to%20chat%20about%20opportunities.&body=Hello%20Rafael,"
+        href={translation("social-media-box.mailto-href")}
         className="social-media-box__link"
         target="_blank"
         rel="noopener noreferrer"
@@ -32,7 +35,7 @@ const SocialMediaBox = () => {
       </a>
 
       <a
-        href="https://wa.me/31649119618?text=Hello%20Rafael,%20I%20saw%20your%20portfolio%20and%20want%20to%20chat%20about%20opportunities."
+        href={translation("social-media-box.wa-href")}
         className="social-media-box__link"
         target="_blank"
         rel="noopener noreferrer"
