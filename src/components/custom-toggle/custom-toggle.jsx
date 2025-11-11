@@ -2,22 +2,28 @@ import "./custom-toggle.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { useTranslations } from "../../context/language-context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CustomToggle = ({ languageToggle, ThemeToggle }) => {
   const { language, setLanguage } = useTranslations();
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem("dark-mode");
+    return saved !== null ? JSON.parse(saved) : true;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("dark-mode", JSON.stringify(isDarkMode));
+
+    const htmlElement = document.documentElement;
+    if (isDarkMode) {
+      htmlElement.setAttribute("data-theme", "dark");
+    } else {
+      htmlElement.removeAttribute("data-theme");
+    }
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
-    const htmlElement = document.documentElement;
-
-    if (isDarkMode) {
-      htmlElement.removeAttribute("data-theme", "dark");
-      setIsDarkMode(false);
-    } else {
-      htmlElement.setAttribute("data-theme", "dark");
-      setIsDarkMode(true);
-    }
+    setIsDarkMode((prev) => !prev);
   };
 
   const toggleLanguage = () => {
