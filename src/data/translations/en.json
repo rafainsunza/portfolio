@@ -17,5 +17,9 @@
   "social-media-box": {
     "mailto-href": "mailto:yourname@example.com?subject=Hello%20Rafael,%20we%20saw%20your%20portfolio%20and%20want%20to%20chat%20about%20opportunities.&body=Hello%20Rafael,",
     "wa-href": "https://wa.me/31649119618?text=Hello%20Rafael,%20I%20saw%20your%20portfolio%20and%20want%20to%20chat%20about%20opportunities."
+  },
+
+  "projects": {
+    "title": "My projects"
   }
 }

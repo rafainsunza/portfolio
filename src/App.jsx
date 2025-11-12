@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/navbar";
 import MenuButton from "./components/menu-button/menu-button";
 import Branding from "./components/branding/branding";
 import Hero from "./components/hero/hero";
+import Projects from "./components/projects/projects";
 import { useEffect, useRef, useState } from "react";
 
 const App = () => {
@@ -82,7 +83,7 @@ const App = () => {
         </section>
 
         <section id="projects" ref={sectionRefs.projects}>
-          PROJECTS
+          <Projects />
         </section>
 
         <section id="cv" ref={sectionRefs.cv}>

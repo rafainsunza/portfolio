@@ -17,5 +17,9 @@
   "social-media-box": {
     "mailto-href": "mailto:yourname@example.com?subject=Hallo%20Rafael,%20we%20hebben%20je%20portfolio%20bekeken%20en%20willen%20graag%20over%20mogelijkheden%20praten.&body=Hallo%20Rafael,",
     "wa-href": "https://wa.me/31649119618?text=Hallo%20Rafael,%20ik%20heb%20je%20portfolio%20bekeken%20en%20wil%20graag%20praten%20over%20mogelijkheden."
+  },
+
+  "projects": {
+    "title": "Mijn projecten"
   }
 }

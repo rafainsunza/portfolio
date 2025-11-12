@@ -13,13 +13,9 @@ const CustomToggle = ({ languageToggle, ThemeToggle }) => {
 
   useEffect(() => {
     localStorage.setItem("dark-mode", JSON.stringify(isDarkMode));
-
     const htmlElement = document.documentElement;
-    if (isDarkMode) {
-      htmlElement.setAttribute("data-theme", "dark");
-    } else {
-      htmlElement.removeAttribute("data-theme");
-    }
+
+    isDarkMode ? htmlElement.setAttribute("data-theme", "dark") : htmlElement.removeAttribute("data-theme");
   }, [isDarkMode]);
 
   const toggleTheme = () => {

@@ -1,7 +1,6 @@
 @use "index" as *;
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   font-size: 16px;
@@ -12,6 +11,10 @@ html {
   ::-webkit-scrollbar-thumb {
     background: var(--border);
     border-radius: 4px;
+  }
+
+  @media (min-width: $breakpoint-lg) and (min-height: 700px) {
+    scroll-snap-type: y mandatory;
   }
 }
 
@@ -28,6 +31,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: $space-sm $space-xs;
+  background-color: var(--background);
 
   @media (min-width: $breakpoint-md) {
     padding: $space-sm;
@@ -40,21 +44,53 @@ header {
 }
 
 section {
-  height: 100dvh;
+  height: auto;
   width: 100%;
   max-width: $breakpoint-xl;
-  padding: 75px $space-xs $space-sm $space-xs;
+  padding: $space-sm $space-xs $space-sm $space-xs;
   scroll-snap-align: start;
-
-  @media (min-width: $breakpoint-md) {
-    padding: 75px $space-sm $space-sm $space-sm;
-  }
 
   @media (min-width: $breakpoint-lg) {
     padding: 75px $space-lg $space-sm $space-lg;
   }
 
+  @media (min-width: $breakpoint-lg) and (min-height: 700px) {
+    height: 100dvh;
+  }
+
   @media (min-width: $breakpoint-xl) {
     margin: 0 auto;
+  }
+}
+
+.hero,
+.projects,
+.cv,
+.about,
+.contact {
+  min-height: calc(100dvh - 110px); // height of header + section padding
+
+  @media (min-width: $breakpoint-lg) {
+    min-height: calc(100dvh - 170px); // height of header + section padding
+  }
+}
+
+h1,
+.section__title {
+  margin-bottom: $space-md;
+  font-family: var(--secondary-font);
+  font-size: $font-size-xxl;
+  letter-spacing: -4px;
+  word-spacing: -10px;
+  line-height: 60px;
+}
+
+.section__title {
+  font-size: clamp(2.6rem, 5vw + 1.25rem, 3.8rem);
+  word-spacing: -5px;
+  word-wrap: break-word;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: $space-md;
   }
 }

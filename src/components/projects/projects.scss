@@ -1,0 +1,48 @@
+@use "../../index.scss" as *;
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  @media (min-width: $breakpoint-lg) {
+    grid-auto-columns: 360px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: $space-sm;
+    min-height: 400px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    @media (min-width: 380px) {
+      grid-auto-columns: 360px;
+    }
+  }
+
+  &__card {
+    display: grid;
+    grid-template-rows: max-content 1fr 1fr;
+    scroll-snap-align: start;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--container-background);
+
+    &-title {
+      text-align: center;
+      padding: $space-xxs 0;
+      font-family: var(--secondary-font);
+      font-size: $font-size-lg;
+    }
+
+    &-preview {
+      background-color: white;
+    }
+
+    &-description {
+      padding: $space-sm $space-xs;
+    }
+  }
+}

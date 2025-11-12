@@ -4,16 +4,10 @@
   display: grid;
   grid-template-rows: repeat(3, max-content);
   align-content: center;
-  // justify-content: center;
   height: 100%;
 
   &__title {
     margin-bottom: $space-xs;
-    font-family: var(--secondary-font);
-    font-size: $font-size-xxl;
-    letter-spacing: -4px;
-    word-spacing: -10px;
-    line-height: 60px;
 
     & br {
       @media (min-width: $breakpoint-md-lg) {
