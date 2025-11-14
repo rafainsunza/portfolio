@@ -20,6 +20,28 @@
   },
 
   "projects": {
-    "title": "My projects"
+    "title": "My projects",
+    "tech-used": "Built using",
+    "view-repo": "Check out the repo",
+    "cards": {
+      "onderde10": {
+        "description": "Interactive scoreboard for tracking points in a card game."
+      },
+      "eredivisie": {
+        "description": "Web app fetching Eredivisie stats via REST API, with caching to handle rate limits."
+      },
+      "ecommerce": {
+        "description": "Dynamic product page with interactive cart and an image slider with lightbox."
+      },
+      "eitalexander": {
+        "description": "Redesigned and redeveloped an existing website with improved UX and responsive design."
+      },
+      "geoinfo": {
+        "description": "Interactive country data explorer using REST APIs with lazy-loaded content."
+      },
+      "portfolio": {
+        "description": "Portfolio website featuring a dynamic project gallery and multilingual support."
+      }
+    }
   }
 }

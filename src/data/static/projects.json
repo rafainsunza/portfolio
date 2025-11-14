@@ -1,0 +1,52 @@
+[
+  {
+    "id": "onderde10",
+    "name": "Onder de 10",
+    "screenshot": "/images/projects/onderde10.png",
+    "href": "https://www.onderde10.nl/scorebord/",
+    "gitHubHref": "https://github.com/rafainsunza/onder_de_10",
+    "tech": "web components"
+  },
+
+  {
+    "id": "eredivisie",
+    "name": "Eredivisie",
+    "screenshot": "/images/projects/eredivisie.png",
+    "href": "https://eredivisie.netlify.app/",
+    "gitHubHref": "https://github.com/rafainsunza/eredivisie-app",
+    "tech": "react"
+  },
+
+  {
+    "id": "ecommerce",
+    "name": "E-commerce",
+    "screenshot": "/images/projects/ecommerce.png",
+    "href": "https://customproductpage.netlify.app/",
+    "gitHubHref": "https://github.com/rafainsunza/ecommerce-product-page/",
+    "tech": "web components"
+  },
+  {
+    "id": "eitalexander",
+    "name": "Eitalexander",
+    "screenshot": "/images/projects/eitalexander.png",
+    "href": "https://eitalexander.com/",
+    "gitHubHref": "https://github.com/rafainsunza/eita",
+    "tech": "web components"
+  },
+  {
+    "id": "geoinfo",
+    "name": "Geo Info",
+    "screenshot": "/images/projects/geoinfo.png",
+    "href": "https://infobycountry.netlify.app/",
+    "gitHubHref": "https://github.com/rafainsunza/country-data",
+    "tech": "web components"
+  },
+  {
+    "id": "portfolio",
+    "name": "Portfolio",
+    "screenshot": "/images/projects/portfolio.png",
+    "href": "http://localhost:5173/",
+    "gitHubHref": "https://github.com/rafainsunza/portfolio",
+    "tech": "react"
+  }
+]
