@@ -34,7 +34,7 @@ header {
   background-color: var(--background);
 
   @media (min-width: $breakpoint-md) {
-    padding: $space-sm;
+    padding: $space-sm $space-md;
   }
 
   @media (min-width: $breakpoint-md-lg) {
@@ -50,8 +50,12 @@ section {
   padding: $space-sm $space-xs $space-sm $space-xs;
   scroll-snap-align: start;
 
+  @media (min-width: $breakpoint-md) {
+    padding: $space-sm $space-lg $space-md $space-lg;
+  }
+
   @media (min-width: $breakpoint-lg) {
-    padding: 75px $space-lg $space-sm $space-lg;
+    padding: 75px $space-lg $space-md $space-lg;
   }
 
   @media (min-width: $breakpoint-lg) and (min-height: 700px) {

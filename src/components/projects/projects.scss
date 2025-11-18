@@ -5,48 +5,64 @@
   flex-direction: column;
   height: 100%;
 
+  @media (min-width: $breakpoint-lg) {
+    justify-content: space-between;
+  }
+
   &__cards {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: clamp(300px, 100%, 360px);
-    gap: $space-sm;
+    grid-auto-columns: 100%;
+    gap: $space-xs;
     min-height: 400px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-auto-columns: calc(50% - ($space-xs / 2));
+    }
+
+    @media (min-width: $breakpoint-md) {
+      grid-auto-columns: calc(50% - ($space-sm / 2));
+      gap: $space-sm;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-auto-columns: calc(33.3% - ($space-md / 3) * 2);
+      gap: $space-md;
+    }
   }
 
   &__card {
     display: grid;
-    grid-template-rows: max-content 175px 150px max-content;
     grid-template-columns: 1fr 1fr;
-    scroll-snap-align: start;
+    height: 100%;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: var(--container-background);
+    scroll-snap-align: start;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+
+    &:hover:not(:has(.projects__card-github-link:hover)) {
+      background-color: var(--border);
+    }
 
     &-title {
       grid-column: span 2;
-      text-align: center;
       padding: $space-xs 0;
+      text-align: center;
       font-family: var(--secondary-font);
       font-size: $font-size-lg;
     }
 
     &-preview {
       grid-column: span 2;
-      overflow: hidden;
-
-      & img {
-        transition: transform 0.4s ease;
-        &:hover {
-          transform: scale(1.2);
-        }
-      }
     }
 
     &-description {
       grid-column: span 2;
-      padding: $space-md $space-sm 0 $space-sm;
+      padding: $space-sm;
       font-size: $font-size-md;
     }
 
@@ -56,12 +72,17 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      height: 85px;
+      padding: $space-sm 0;
       font-size: 25px;
 
       &__label {
         font-size: $font-size-xxs;
-        padding: $space-xs 0 $space-sm 0;
       }
+    }
+
+    &-github-link:hover {
+      background-color: var(--border);
     }
   }
 }
