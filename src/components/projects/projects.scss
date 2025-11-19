@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 
   @media (min-width: $breakpoint-lg) {
     justify-content: space-between;
@@ -17,6 +18,7 @@
     min-height: 400px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    will-change: transform;
 
     @media (min-width: $breakpoint-sm) {
       grid-auto-columns: calc(50% - ($space-xs / 2));
@@ -38,18 +40,15 @@
     grid-template-columns: 1fr 1fr;
     height: 100%;
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: var(--container-background);
     scroll-snap-align: start;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    overflow: hidden;
 
-    &:hover:not(:has(.projects__card-github-link:hover)) {
-      background-color: var(--border);
+    &-link {
+      grid-column: span 2;
     }
 
     &-title {
-      grid-column: span 2;
       padding: $space-xs 0;
       text-align: center;
       font-family: var(--secondary-font);
@@ -57,11 +56,12 @@
     }
 
     &-preview {
-      grid-column: span 2;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
     }
 
     &-description {
-      grid-column: span 2;
+      height: 110px;
       padding: $space-sm;
       font-size: $font-size-md;
     }
@@ -70,10 +70,9 @@
     &-github-link {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       height: 85px;
-      padding: $space-sm 0;
       font-size: 25px;
 
       &__label {
@@ -81,8 +80,8 @@
       }
     }
 
-    &-github-link:hover {
-      background-color: var(--border);
+    &-github-link {
+      transition: transform 0.3s ease;
     }
   }
 }
