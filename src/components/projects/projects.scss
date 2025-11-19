@@ -18,6 +18,7 @@
     min-height: 400px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     will-change: transform;
 
     @media (min-width: $breakpoint-sm) {

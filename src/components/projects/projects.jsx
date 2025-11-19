@@ -14,6 +14,19 @@ const Projects = () => {
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
 
+  const scrollToPage = (index) => {
+    const container = containerRef.current;
+    const cards = cardsRef.current[index];
+
+    if (container && cards) {
+      container.scrollTo({ left: cards.offsetLeft });
+    }
+  };
+
+  useEffect(() => {
+    scrollToPage(currentPage);
+  }, [currentPage]);
+
   useEffect(() => {
     const cards = Array.from(document.querySelectorAll(".projects__card"));
     cardsRef.current = cards;
@@ -46,7 +59,13 @@ const Projects = () => {
     setPageCount(getPageCount());
     setCurrentPage(getFirstVisibleCardIndex(containerRef.current, cardsRef.current));
 
-    const handleScroll = () => setCurrentPage(getFirstVisibleCardIndex(containerRef.current, cardsRef.current));
+    let scrollTimeout;
+    const handleScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setCurrentPage(getFirstVisibleCardIndex(containerRef.current, cardsRef.current));
+      }, 50);
+    };
     const handleResize = () => setPageCount(getPageCount());
 
     window.addEventListener("resize", handleResize);
@@ -96,7 +115,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} />
+      <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>
   );
 };
