@@ -19,6 +19,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    scrollbar-width: none;
     will-change: transform;
 
     @media (min-width: $breakpoint-sm) {
@@ -44,45 +45,64 @@
     border-radius: 8px;
     background-color: var(--container-background);
     scroll-snap-align: start;
+    transition: border 0.5s ease;
+
+    &:has(.projects__card-link:hover) {
+    }
 
     &-link {
       grid-column: span 2;
     }
 
-    &-title {
+    &__title {
       padding: $space-xs 0;
       text-align: center;
       font-family: var(--secondary-font);
       font-size: $font-size-lg;
     }
 
-    &-preview {
+    &__preview {
       border-radius: 8px 8px 0 0;
       overflow: hidden;
     }
 
-    &-description {
+    &__description {
       height: 110px;
       padding: $space-sm;
       font-size: $font-size-md;
     }
 
-    &-tech,
-    &-github-link {
+    &__tech,
+    &__github-link {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 85px;
-      font-size: 25px;
+      font-size: 28px;
 
       &__label {
         font-size: $font-size-xxs;
       }
     }
 
-    &-github-link {
-      transition: transform 0.3s ease;
+    &__github-link {
+      transition: color 0.3s ease;
+      color: var(--secondary-text);
+
+      &:hover {
+        color: var(--primary-text);
+      }
+    }
+  }
+
+  &__card-navigation {
+    display: flex;
+    justify-content: center;
+    margin: $space-sm 0;
+
+    @media (min-width: $breakpoint-lg) {
+      margin: 0;
     }
   }
 }

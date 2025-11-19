@@ -1,0 +1,23 @@
+@use "../../index.scss" as *;
+
+.navigation-button {
+  display: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 28px;
+  padding: $space-xs;
+  margin: 0 25%;
+
+  @media (min-width: $breakpoint-sm) {
+    display: block;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+}

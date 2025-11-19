@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./slider-bullets.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiamond } from "@fortawesome/free-solid-svg-icons";
 
 const SliderBullets = ({ sliderBulletCount, currentPage, setCurrentPage }) => {

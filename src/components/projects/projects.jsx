@@ -5,6 +5,7 @@ import { useTranslations } from "../../context/language-context";
 import { faGithub, faReact } from "@fortawesome/free-brands-svg-icons";
 import WebComponentsIcon from "../web-components-icon/web-components-icon";
 import SliderBullets from "../slider-bullets/slider-bullets";
+import NavigationButton from "../navigation-button/navigation-button";
 import { useEffect, useRef, useState } from "react";
 
 const Projects = () => {
@@ -85,16 +86,16 @@ const Projects = () => {
         {projectData.map((project) => (
           <div className="projects__card" key={project.name}>
             <a href={project.href} rel="noopener noreferrer" target="_blank" className="projects__card-link">
-              <div className="projects__card-preview">
+              <div className="projects__card__preview">
                 <img src={project.screenshot} alt="" />
               </div>
-              <h3 className="projects__card-title">{project.name}</h3>
+              <h3 className="projects__card__title">{project.name}</h3>
 
-              <p className="projects__card-description">{translation(`projects.cards.${project.id}.description`)}</p>
+              <p className="projects__card__description">{translation(`projects.cards.${project.id}.description`)}</p>
             </a>
 
             <div
-              className="projects__card-tech"
+              className="projects__card__tech"
               title={`${translation("projects.tech-used")}  ${project.tech.replace(/\b\w/g, (char) =>
                 char.toUpperCase()
               )}`}
@@ -106,7 +107,7 @@ const Projects = () => {
               href={project.gitHubHref}
               rel="noopener noreferrer"
               target="_blank"
-              className="projects__card-github-link"
+              className="projects__card__github-link"
               title={translation("projects.view-repo")}
             >
               <FontAwesomeIcon icon={faGithub} />
@@ -115,7 +116,18 @@ const Projects = () => {
         ))}
       </div>
 
-      <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <div className="projects__card-navigation">
+        <NavigationButton left currentPage={currentPage} setCurrentPage={setCurrentPage} disabled={currentPage === 0} />
+
+        <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
+        <NavigationButton
+          right
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          disabled={currentPage === pageCount - 1}
+        />
+      </div>
     </div>
   );
 };

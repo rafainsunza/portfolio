@@ -3,7 +3,6 @@
 .slider-bullets {
   display: flex;
   justify-content: center;
-  margin: $space-sm 0;
 
   &__button {
     background-color: transparent;
@@ -17,13 +16,13 @@
     height: 10px;
     width: 10px;
     background-color: var(--primary-text);
-    cursor: pointer;
+    color: var(--primary-text);
     transition: transform 0.3s ease;
-    transform: scale(0.6);
+    transform: scale(0.6) rotate(45deg);
     opacity: 0.2;
 
     &.active {
-      transform: scale(1) rotate(45deg);
+      transform: scale(1);
       opacity: 1;
     }
 
