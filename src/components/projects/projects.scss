@@ -44,11 +44,9 @@
     border: 1px solid var(--border);
     border-radius: 8px;
     background-color: var(--container-background);
+    color: var(--primary-text);
     scroll-snap-align: start;
-    transition: border 0.5s ease;
-
-    &:has(.projects__card-link:hover) {
-    }
+    transition: color 0.3s ease;
 
     &-link {
       grid-column: span 2;

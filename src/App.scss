@@ -56,7 +56,7 @@ section {
   }
 
   @media (min-width: $breakpoint-lg) {
-    padding: 75px $space-lg $space-md $space-lg;
+    padding: 75px $space-lg $space-sm $space-lg;
   }
 
   @media (min-width: $breakpoint-lg) and (min-height: 700px) {
@@ -76,7 +76,7 @@ section {
   min-height: calc(100dvh - 110px); // height of header + section padding
 
   @media (min-width: $breakpoint-lg) {
-    min-height: calc(100dvh - 170px); // height of header + section padding
+    height: calc(100dvh - 170px); // height of header + section padding
   }
 }
 

@@ -43,5 +43,96 @@
         "description": "Portfolio website featuring a dynamic project gallery and multilingual support."
       }
     }
+  },
+  "cv": {
+    "title": "My CV",
+    "side-content": {
+      "location": "Amsterdam, Netherlands",
+
+      "skills": {
+        "title": "SKILLS",
+        "items": [
+          "Javascript",
+          "Web Components",
+          "React",
+          "HTML5",
+          "CSS3",
+          "Git",
+          "Responsive Design",
+          "Teamwork",
+          "Leadership",
+          "Client-facing Communication"
+        ]
+      },
+
+      "education": {
+        "title": "EDUCATION",
+        "content": "Self-taught developer through numerous online courses in Python, Javascript, Web Components, React and general Web Development. (WincAcademy and other platforms)"
+      },
+
+      "languages": {
+        "title": "LANGUAGES",
+
+        "items": [
+          {
+            "name": "Dutch",
+            "level": "C2"
+          },
+
+          {
+            "name": "English",
+            "level": "C1"
+          },
+
+          {
+            "name": "Portuguese",
+            "level": "C1"
+          },
+
+          {
+            "name": "Spanish",
+            "level": "A1"
+          }
+        ]
+      }
+    },
+
+    "main-content": {
+      "dev-experience": {
+        "title": "DEVELOPMENT EXPERIENCE",
+
+        "items": [
+          {
+            "title": "FRONT-END DEVELOPER",
+            "subtitle": "Escola Internacional da Técnica Alexander",
+            "year": "2025",
+            "details": [
+              "Redesigned and redeveloped the school’s website for improved usability.",
+              "Implemented a modern layout using Web Components and semantic HTML."
+            ]
+          },
+
+          {
+            "title": "FRONT-END DEVELOPER",
+            "subtitle": "F4F Games",
+            "year": "2025",
+            "details": [
+              "Developed an online scoreboard for tracking points and game progress in the card game “Onder de 10”.",
+              "Built with Web Components, focusing on modular and responsive design."
+            ]
+          },
+
+          {
+            "title": "WEB DEVELOPMENT INTERN",
+            "subtitle": "Wolfpack Agency",
+            "year": "2024",
+            "details": [
+              "Completed mock projects, simulating real-world workflows. From receiving a project brief and planning a semantic HTML strucutre to version control with Git and deployment with feedback-based revisions.",
+              "Gained hands-on experience with Web Components and modern front-end practices."
+            ]
+          }
+        ]
+      }
+    }
   }
 }

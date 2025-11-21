@@ -4,6 +4,7 @@ import MenuButton from "./components/menu-button/menu-button";
 import Branding from "./components/branding/branding";
 import Hero from "./components/hero/hero";
 import Projects from "./components/projects/projects";
+import Cv from "./components/cv/cv";
 import { useEffect, useRef, useState } from "react";
 
 const App = () => {
@@ -87,7 +88,7 @@ const App = () => {
         </section>
 
         <section id="cv" ref={sectionRefs.cv}>
-          CV
+          <Cv />
         </section>
 
         <section id="about" ref={sectionRefs.about}>

@@ -117,16 +117,11 @@ const Projects = () => {
       </div>
 
       <div className="projects__card-navigation">
-        <NavigationButton left currentPage={currentPage} setCurrentPage={setCurrentPage} disabled={currentPage === 0} />
+        <NavigationButton left setCurrentPage={setCurrentPage} disabled={currentPage === 0} />
 
         <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-        <NavigationButton
-          right
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          disabled={currentPage === pageCount - 1}
-        />
+        <NavigationButton right setCurrentPage={setCurrentPage} disabled={currentPage === pageCount - 1} />
       </div>
     </div>
   );

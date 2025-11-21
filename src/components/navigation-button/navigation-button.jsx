@@ -1,15 +1,9 @@
-import {
-  faAngleLeft,
-  faAngleRight,
-  faChevronCircleLeft,
-  faChevronCircleRight,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import "./navigation-button.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const NavigationButton = ({ left, right, currentPage, setCurrentPage, disabled }) => {
+const NavigationButton = ({ left, right, setCurrentPage, disabled }) => {
   const handleClick = () => {
     if (left) setCurrentPage((prev) => prev - 1);
     if (right) setCurrentPage((prev) => prev + 1);

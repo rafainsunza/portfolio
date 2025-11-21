@@ -43,5 +43,97 @@
         "description": "Portfolio website met dynamische projectgalerij en meertalige ondersteuning."
       }
     }
+  },
+
+  "cv": {
+    "title": "Mijn CV",
+    "side-content": {
+      "location": "Amsterdam, Nederland",
+
+      "skills": {
+        "title": "VAARDIGHEDEN",
+        "items": [
+          "Javascript",
+          "Web Components",
+          "React",
+          "HTML5",
+          "CSS3",
+          "Git",
+          "Responsive Design",
+          "Teamwork",
+          "Leiderschap",
+          "Klantgerichte communicatie"
+        ]
+      },
+
+      "education": {
+        "title": "OPLEIDING",
+        "content": "Vele online cursussen gevolgd in Python, Javascript, Web Components, React en algemene webdevelopment. (Via onder andere WincAcademy en andere platforms)"
+      },
+
+      "languages": {
+        "title": "TALEN",
+
+        "items": [
+          {
+            "name": "Nederlands",
+            "level": "C2"
+          },
+
+          {
+            "name": "Engels",
+            "level": "C1"
+          },
+
+          {
+            "name": "Portugees",
+            "level": "C1"
+          },
+
+          {
+            "name": "Spaans",
+            "level": "A1"
+          }
+        ]
+      }
+    },
+
+    "main-content": {
+      "dev-experience": {
+        "title": "DEVELOPMENTERVARING",
+
+        "items": [
+          {
+            "title": "FRONT-END DEVELOPER",
+            "subtitle": "Escola Internacional da Técnica Alexander",
+            "year": "2025",
+            "details": [
+              "De schoolwebsite herontworpen en herontwikkeld voor betere gebruikersvriendelijkheid.",
+              "Een modern layout geïmplementeerd met Web Components en semantische HTML."
+            ]
+          },
+
+          {
+            "title": "FRONT-END DEVELOPER",
+            "subtitle": "F4F Games",
+            "year": "2025",
+            "details": [
+              "Een online scorebord ontwikkeld voor het bijhouden van punten en voortgang in het kaartspel “Onder de 10”.",
+              "Ontwikkeld met Web Components, met focus op modulair en respsonsive ontwerp."
+            ]
+          },
+
+          {
+            "title": "WEB DEVELOPMENT STAGIAR",
+            "subtitle": "Wolfpack Agency",
+            "year": "2024",
+            "details": [
+              "Oefenprojecten uitgevoerd die realistische workflows simuleerden, van projectbriefing en planning van een semantische HTML-structuur tot versiebeheer met Git en het doorvoeren van verbeteringen op basis van feedback.",
+              "Ervaring opgedaan met Web Components en moderne front-end technieken."
+            ]
+          }
+        ]
+      }
+    }
   }
 }
