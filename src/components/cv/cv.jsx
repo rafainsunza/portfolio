@@ -5,12 +5,16 @@ import { useTranslations } from "../../context/language-context";
 import cvPortrait from "../../assets/images/cv-photo.jpg";
 import { faPhone, faEnvelope, faLocationDot, faGlobe, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import DownloadFile from "../../components/download-cv/download-file";
 
 const Cv = () => {
   const { translation } = useTranslations();
   return (
     <div className="cv">
-      <h1 className="section__title">{translation("cv.title")}</h1>
+      <div className="cv__header">
+        <h1 className="section__title">{translation("cv.title")} </h1>
+        <DownloadFile />
+      </div>
 
       <div className="cv__wrapper">
         <div className="cv__side-content">

@@ -11,6 +11,11 @@
     margin: $space-xs 0;
   }
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__wrapper {
     font-size: $font-size-sm;
 
@@ -25,6 +30,7 @@
   &__side-content {
     padding: $space-md $space-sm;
     margin: 0 auto;
+    max-width: 700px;
 
     @media (min-width: $breakpoint-xs) {
       display: grid;
@@ -42,6 +48,11 @@
 
     &__item {
       padding: $space-xs 0;
+
+      &:nth-child(3) {
+        display: flex;
+        justify-content: center;
+      }
 
       &:nth-child(4) {
         & svg {
@@ -95,7 +106,11 @@
 
     &__title {
       font-size: $font-size-md;
-      padding: $space-xxs 0;
+      padding: $space-xs 0;
+
+      @media (min-width: $breakpoint-lg) {
+        padding: $space-xxs 0;
+      }
     }
 
     &__list {
@@ -114,6 +129,15 @@
 
         &.spaced {
           padding-bottom: $space-xs;
+          transition: text-shadow 0.3s ease;
+
+          &:not(:nth-child(3)) {
+            &:hover {
+              text-shadow: var(--glow);
+              text-decoration: underline;
+              text-underline-offset: 3px;
+            }
+          }
 
           @media (min-width: $breakpoint-lg) {
             padding-bottom: $space-xxs;
@@ -123,15 +147,17 @@
     }
 
     & img {
-      width: 150px;
+      width: 175px;
+      height: max-content;
+      border: 4px solid var(--accent);
       border-radius: 100%;
-      margin: 0 auto;
     }
   }
 
   &__main-content {
     padding: $space-md $space-sm;
     margin: 0 auto;
+    max-width: 700px;
 
     @media (min-width: $breakpoint-lg) {
       padding: $space-xs;

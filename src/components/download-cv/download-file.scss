@@ -1,0 +1,27 @@
+@use "../../index.scss" as *;
+
+.download-file {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $space-xs;
+  width: 150px;
+  height: 50px;
+  margin: auto 0;
+  border-radius: 5px;
+  font-size: $font-size-xxs;
+  font-weight: 800;
+  background-color: var(--accent);
+  color: #eaeaea;
+  transition: text-shadow 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 1px white, 0 0 10px white;
+  }
+
+  & svg {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+}
