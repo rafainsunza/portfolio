@@ -41,7 +41,7 @@
 
     @media (min-width: $breakpoint-lg) {
       grid-template-rows: max-content 200px 0.5fr 0.5fr;
-      padding: $space-xs;
+      padding: $space-xs $space-sm $space-xs $space-xs;
       background-color: #070707;
       color: #ececec;
     }
