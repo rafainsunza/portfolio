@@ -1,10 +1,13 @@
 import "./App.scss";
+
 import Navbar from "./components/navbar/navbar";
 import MenuButton from "./components/menu-button/menu-button";
 import Branding from "./components/branding/branding";
 import Hero from "./components/hero/hero";
 import Projects from "./components/projects/projects";
 import Cv from "./components/cv/cv";
+import Contact from "./components/contact/contact";
+
 import { useEffect, useRef, useState } from "react";
 
 const App = () => {
@@ -96,7 +99,7 @@ const App = () => {
         </section>
 
         <section id="contact" ref={sectionRefs.contact}>
-          CONTACT
+          <Contact />
         </section>
       </main>
       <footer></footer>

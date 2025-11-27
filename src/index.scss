@@ -24,8 +24,9 @@ $font-size-xl: 1.5rem; // 24px
 $font-size-xxl: 4rem; // 64px
 
 :root {
-  --background: #fafafa;
-  --container-background: #f8f8f8;
+  --background: #f6f6f4;
+  --container-background: #eaeae8;
+  --input-background: #eaeae8;
   --primary-text: #1e1e1e;
   --secondary-text: #808080;
   --accent: #8e8558;
@@ -38,6 +39,7 @@ $font-size-xxl: 4rem; // 64px
 [data-theme="dark"] {
   --background: #121212;
   --container-background: #1e1e1e;
+  --input-background: #d0d0d0;
   --primary-text: #eaeaea;
   --secondary-text: #a8a8a8;
   --border: #3a3a3a;

@@ -13,7 +13,9 @@ const DownloadPdf = () => {
   return (
     <a href={language === "en" ? cvEN : language === "nl" ? cvNL : null} className="download-pdf" download>
       <FontAwesomeIcon icon={faDownload} />
-      <div className="download-pdf__text">DOWNLOAD PDF</div>
+      <div className="download-pdf__text">
+        <span className="md-screen-up">DOWNLOAD</span> PDF
+      </div>
     </a>
   );
 };

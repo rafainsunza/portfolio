@@ -94,8 +94,4 @@ h1,
   font-size: clamp(2.6rem, 5vw + 1.25rem, 3.8rem);
   word-spacing: -5px;
   word-wrap: break-word;
-
-  @media (min-width: $breakpoint-md) {
-    margin-top: $space-md;
-  }
 }

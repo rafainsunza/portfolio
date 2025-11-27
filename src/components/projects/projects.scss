@@ -46,7 +46,11 @@
     background-color: var(--container-background);
     color: var(--primary-text);
     scroll-snap-align: start;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:has(.projects__card-link:hover) {
+      background-color: var(--background);
+    }
 
     &-link {
       grid-column: span 2;
@@ -60,6 +64,7 @@
     }
 
     &__preview {
+      border-bottom: 1px solid var(--border);
       border-radius: 8px 8px 0 0;
       overflow: hidden;
     }
@@ -90,6 +95,7 @@
 
       &:hover {
         color: var(--primary-text);
+        transform: scale(1.1);
       }
     }
   }

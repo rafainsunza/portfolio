@@ -135,5 +135,16 @@
         ]
       }
     }
+  },
+
+  "contact": {
+    "title": "Neem contact op",
+    "message": "Interesse? Vragen? Feedback? Stuur me een berichtje!",
+    "form": {
+      "name": "NAAM",
+      "tel": "TELEFOONNUMMER",
+      "message": "BERICHT",
+      "submit": "VERSTUUR"
+    }
   }
 }

@@ -134,5 +134,16 @@
         ]
       }
     }
+  },
+
+  "contact": {
+    "title": "Get in touch",
+    "message": "Like what you saw? Curious about something? Got feedback? Just drop me a message!",
+    "form": {
+      "name": "NAME",
+      "tel": "PHONE NUMBER",
+      "message": "MESSAGE",
+      "submit": "SEND"
+    }
   }
 }
