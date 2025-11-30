@@ -142,9 +142,15 @@
     "message": "Interesse? Vragen? Feedback? Stuur me een berichtje!",
     "form": {
       "name": "NAAM",
-      "tel": "TELEFOONNUMMER",
+      "tel": ["TELEFOON", "(OPTIONEEL)"],
       "message": "BERICHT",
-      "submit": "VERSTUUR"
+      "submit": "VERSTUUR",
+      "errors": {
+        "nameRequired": "Vul een naam in.",
+        "nameTooShort": "Naam is te kort.",
+        "invalidCharacters": "Vul een geldige naam in.",
+        "invalidEmail": "Voer een geldige email in."
+      }
     }
   }
 }

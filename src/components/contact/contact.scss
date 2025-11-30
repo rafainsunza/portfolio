@@ -66,37 +66,71 @@
     }
 
     &__group {
-      &:focus-within {
-        & label {
-          color: var(--primary-text);
-          text-shadow: var(--glow);
+      &.invalid {
+        &:hover {
+          & .contact__form__input {
+            background-color: #ffcccf;
+          }
         }
+
+        & .contact__form__input {
+          border: 2px solid red;
+          background-color: #ffcccf;
+        }
+      }
+
+      &.valid {
+        &:hover {
+          & .contact__form__input {
+            background-color: #ccffcf;
+          }
+        }
+
+        & .contact__form__input {
+          border: 2px solid green;
+          background-color: #ccffcf;
+        }
+      }
+
+      & label {
+        font-size: $font-size-xs;
+        color: var(--primary-text);
+
+        & span {
+          font-size: $font-size-xxs;
+          color: var(--secondary-text);
+          margin-left: $space-xs;
+        }
+      }
+
+      & textarea {
+        min-height: 75px;
       }
     }
 
-    & label {
-      font-size: $font-size-xs;
-      color: var(--secondary-text);
-      transition: color 0.3s ease, text-shadow;
-    }
-
-    & textarea {
-      min-height: 75px;
-    }
-
-    & input,
-    & textarea {
+    &__input {
       padding: $space-xxs $space-xs;
       border: 1px solid var(--border);
+      border-radius: 2px;
       width: 100%;
       background-color: var(--input-background);
-      transition: transform 0.1s ease, background-color 0.3s ease;
+      transition: transform 0.2s ease, background-color 0.3s ease;
 
       &:focus,
       &:active {
         outline: none;
         background-color: white;
         transform: scale(1.01);
+      }
+
+      &__error-message {
+        font-size: $font-size-sm;
+        color: red;
+        margin: $space-xxs 0 $space-xs 0;
+
+        &.displaynone {
+          display: none;
+        }
       }
     }
 
@@ -117,7 +151,7 @@
         cursor: pointer;
 
         &:hover {
-          background-color: lighten(#8e8558, 5%);
+          // background-color: lighten(#8e8558, 5%);
         }
       }
 

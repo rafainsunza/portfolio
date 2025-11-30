@@ -141,9 +141,15 @@
     "message": "Like what you saw? Curious about something? Got feedback? Just drop me a message!",
     "form": {
       "name": "NAME",
-      "tel": "PHONE NUMBER",
+      "tel": ["PHONE", "(OPTIONAL)"],
       "message": "MESSAGE",
-      "submit": "SEND"
+      "submit": "SEND",
+      "errors": {
+        "nameRequired": "Enter a name.",
+        "nameTooShort": "Name is too short.",
+        "invalidCharacters": "Enter a valid name.",
+        "invalidEmail": "Enter a valid email."
+      }
     }
   }
 }
