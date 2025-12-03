@@ -87,7 +87,7 @@ const Contact = () => {
     const value = e.target.value;
 
     setMessage(value);
-    setMessageLength(value.length);
+    setMessageLength(value.trim().length);
   };
 
   useEffect(() => {
