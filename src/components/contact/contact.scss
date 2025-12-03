@@ -56,6 +56,7 @@
   }
 
   &__form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: $space-xs;
@@ -172,6 +173,76 @@
         transform: rotate(45deg);
         margin-left: $space-xs;
       }
+
+      &__loader {
+        & svg {
+          animation: spin 2s linear infinite;
+        }
+      }
     }
+
+    &__success__message {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: $space-md;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 0 $space-md;
+      background-color: #ccffcf;
+      border: 2px solid green;
+      border-radius: 5px;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      transform: scale(0);
+      transition: transform 0.5s ease-in-out;
+
+      & svg {
+        height: 125px;
+        width: 125px;
+        font-size: 100px;
+      }
+
+      &.success,
+      &.fail {
+        transform: scale(1);
+      }
+
+      &.success {
+        background-color: #ccffcf;
+        border: 2px solid green;
+
+        & svg {
+          padding: $space-sm;
+          border-radius: 100%;
+          background-color: white;
+          color: green;
+        }
+      }
+
+      &.fail {
+        background-color: #ffcccf;
+        border: 2px solid red;
+
+        & svg {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

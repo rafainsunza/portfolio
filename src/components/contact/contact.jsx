@@ -3,7 +3,7 @@ import "./contact.scss";
 import { useTranslations } from "../../context/language-context";
 import SocialMediaBox from "../social-media-box/social-media-box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faClose, faSpinner, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect, useState } from "react";
 import validator from "validator";
@@ -23,13 +23,69 @@ const Contact = () => {
 
   const [message, setMessage] = useState("");
   const [messageLength, setMessageLength] = useState(0);
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [submitted, setSubmitted] = useState(null);
   const maxMessageLength = 500;
   const minMessageLength = 10;
 
   const [isValid, setIsValid] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isValid || isSending) return;
+
+    setIsSending(true);
+
+    const formData = {
+      name: name.trim(),
+      email: email.trim(),
+      message: message.trim(),
+    };
+
+    try {
+      const error = "https://httpstat.us/500";
+      const success = "https://jsonplaceholder.typicode.com/posts";
+
+      const response = await fetch(error, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      console.log("MOCK API RESPONSE:", data);
+
+      setName("");
+      setEmail("");
+      setMessage("");
+      setMessageLength(0);
+      setNameTouched(false);
+      setEmailTouched(false);
+      setIsValidName(null);
+      setIsValidEmail(null);
+      setIsValid(false);
+
+      setSubmitted(true);
+      setSuccessMessage(translation("contact.form.successMessage.success"));
+
+      setTimeout(() => {
+        setSubmitted(null);
+        setSuccessMessage(null);
+      }, 5000);
+    } catch (error) {
+      console.error("Error sending mock request:", error);
+      setSubmitted(false);
+      setSuccessMessage(translation("contact.form.successMessage.fail"));
+
+      setTimeout(() => {
+        setSubmitted(null);
+        setSuccessMessage(null);
+      }, 5000);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   // NAME VALIDATION
@@ -191,9 +247,28 @@ const Contact = () => {
           </div>
         </div>
 
-        <button type="submit" className={`contact__form__submit-button ${isValid ? "active" : ""}`} disabled={!isValid}>
-          {translation("contact.form.submit")} <FontAwesomeIcon icon={faPaperPlane} />
+        <button
+          type="submit"
+          className={`contact__form__submit-button ${isValid && !isSending ? "active" : ""}`}
+          disabled={!isValid || isSending}
+        >
+          {!isSending ? (
+            <>
+              {translation("contact.form.submit")} <FontAwesomeIcon icon={faPaperPlane} />
+            </>
+          ) : (
+            <div className="contact__form__submit-button__loader">
+              <FontAwesomeIcon icon={faSpinner} />
+            </div>
+          )}
         </button>
+
+        {successMessage && (
+          <div className={`contact__form__success__message ${submitted ? "success" : "fail"}`}>
+            <FontAwesomeIcon icon={submitted ? faCheck : faTriangleExclamation} />
+            {successMessage}
+          </div>
+        )}
       </form>
     </div>
   );

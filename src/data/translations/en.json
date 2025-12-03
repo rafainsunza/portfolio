@@ -143,6 +143,10 @@
       "confirmEmail": "CONFIRM EMAIL",
       "message": "MESSAGE",
       "submit": "SEND",
+      "successMessage": {
+        "success": "Thanks for getting in touch! I will respond ASAP.",
+        "fail": "Oops! Something went wrong. You can try another method or try again later."
+      },
       "errors": {
         "nameRequired": "Enter a name.",
         "nameTooShort": "Name is too short.",

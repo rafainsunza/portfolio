@@ -144,6 +144,10 @@
       "confirmEmail": "BEVESTIG EMAIL",
       "message": "BERICHT",
       "submit": "VERSTUUR",
+      "successMessage": {
+        "success": "Bedankt voor je bericht! Ik reageer zo snel mogelijk.",
+        "fail": "Oeps! Je bericht kon niet worden verzonden. Probeer een van de andere opties of probeer het later opnieuw."
+      },
       "errors": {
         "nameRequired": "Vul een naam in.",
         "nameTooShort": "Naam is te kort.",
