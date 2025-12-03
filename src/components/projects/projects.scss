@@ -38,8 +38,6 @@
   }
 
   &__card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     height: 100%;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -49,11 +47,9 @@
     transition: color 0.3s ease, background-color 0.3s ease;
 
     &:has(.projects__card-link:hover) {
-      background-color: var(--background);
-    }
-
-    &-link {
-      grid-column: span 2;
+      & .projects__card__preview img {
+        transform: scale(1.25);
+      }
     }
 
     &__title {
@@ -67,6 +63,10 @@
       border-bottom: 1px solid var(--border);
       border-radius: 8px 8px 0 0;
       overflow: hidden;
+
+      & img {
+        transition: transform 0.3s ease;
+      }
     }
 
     &__description {
@@ -75,27 +75,20 @@
       font-size: $font-size-md;
     }
 
-    &__tech,
     &__github-link {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
       height: 85px;
-      font-size: 28px;
-
-      &__label {
-        font-size: $font-size-xxs;
-      }
-    }
-
-    &__github-link {
-      transition: color 0.3s ease;
+      width: max-content;
+      margin: 0 auto;
+      font-size: 32px;
+      transition: color 0.3s ease, transform 0.3s ease;
       color: var(--secondary-text);
 
       &:hover {
         color: var(--primary-text);
-        transform: scale(1.1);
+        transform: scale(1.25);
       }
     }
   }

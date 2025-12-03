@@ -3,7 +3,7 @@ import "./contact.scss";
 import { useTranslations } from "../../context/language-context";
 import SocialMediaBox from "../social-media-box/social-media-box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect, useState } from "react";
 import validator from "validator";
@@ -12,17 +12,19 @@ const Contact = () => {
   const { translation } = useTranslations();
 
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
-  const [message, setMessage] = useState("");
-
   const [nameTouched, setNameTouched] = useState(false);
   const [isValidName, setIsValidName] = useState(null);
   const [nameErrorMessage, setNameErrorMessage] = useState(null);
 
+  const [email, setEmail] = useState("");
   const [emailTouched, setEmailTouched] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(null);
   const [emailErrorMessage, setEmailErrorMessage] = useState(null);
+
+  const [message, setMessage] = useState("");
+  const [messageLength, setMessageLength] = useState(0);
+  const maxMessageLength = 500;
+  const minMessageLength = 10;
 
   const [isValid, setIsValid] = useState(false);
 
@@ -59,7 +61,7 @@ const Contact = () => {
 
   // EMAIL VALIDATION
   const validateEmail = (value) => {
-    const isEmail = validator.isEmail(value);
+    const isEmail = validator.isEmail(value.trim());
 
     if (!isEmail) setEmailErrorMessage(translation("contact.form.errors.invalidEmail"));
     else setEmailErrorMessage(null);
@@ -80,7 +82,19 @@ const Contact = () => {
     setIsValidEmail(validateEmail(email));
   };
 
-  useEffect(() => {}, [name, email, tel, message, isValidName, nameTouched]);
+  // MESSAGE VALIDATION
+  const handleMessageChange = (e) => {
+    const value = e.target.value;
+
+    setMessage(value);
+    setMessageLength(value.length);
+  };
+
+  useEffect(() => {
+    if (isValidName && isValidEmail && messageLength >= minMessageLength && messageLength <= maxMessageLength) {
+      setIsValid(true);
+    } else setIsValid(false);
+  }, [isValidName, isValidEmail, messageLength]);
 
   return (
     <div className="contact">
@@ -107,73 +121,77 @@ const Contact = () => {
       <SocialMediaBox />
 
       <form onSubmit={handleSubmit} className="contact__form">
-        <div
-          className={`contact__form__group ${isValidName === false ? "invalid" : isValidName === true ? "valid" : ""} `}
-        >
+        <div className={`contact__form__group ${isValidName ? "valid" : isValidName === false ? "invalid" : ""}`}>
           <label htmlFor="name">{translation("contact.form.name")}</label>
-          <input
-            className="contact__form__input"
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={handleNameChange}
-            onBlur={handleNameBlur}
-            required
-          />
-          <div className={`contact__form__input__error-message ${isValidName === false ? "" : "displaynone"}`}>
-            <FontAwesomeIcon icon={faCircleExclamation} /> {nameErrorMessage}
+          <div className="contact__form__input__wrapper">
+            <input
+              className="contact__form__input"
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={handleNameChange}
+              onBlur={handleNameBlur}
+              minLength={2}
+              maxLength={150}
+              required
+            />
+
+            <span className="contact__form__input__icon">
+              {nameErrorMessage && <FontAwesomeIcon icon={faTriangleExclamation} />}
+              {isValidName && <FontAwesomeIcon icon={faCheck} />}
+            </span>
           </div>
+
+          {nameErrorMessage && <div className="contact__form__input__error-message">{nameErrorMessage}</div>}
         </div>
 
-        <div
-          className={`contact__form__group ${
-            isValidEmail === false ? "invalid" : isValidEmail === true ? "valid" : ""
-          } `}
-        >
+        <div className={`contact__form__group ${isValidEmail ? "valid" : isValidEmail === false ? "invalid" : ""}`}>
           <label htmlFor="email">EMAIL</label>
-          <input
-            className="contact__form__input"
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            onBlur={handleEmailBlur}
-            required
-          />
-          <div className={`contact__form__input__error-message ${isValidEmail === false ? "" : "displaynone"}`}>
-            <FontAwesomeIcon icon={faCircleExclamation} /> {emailErrorMessage}
+          <div className="contact__form__input__wrapper">
+            <input
+              className="contact__form__input"
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={handleEmailChange}
+              onBlur={handleEmailBlur}
+              maxLength={254}
+              required
+            />
+
+            <span className="contact__form__input__icon">
+              {emailErrorMessage && <FontAwesomeIcon icon={faTriangleExclamation} />}
+              {isValidEmail && <FontAwesomeIcon icon={faCheck} />}
+            </span>
+          </div>
+
+          {emailErrorMessage && <div className="contact__form__input__error-message">{emailErrorMessage}</div>}
+        </div>
+
+        <div className="contact__form__group">
+          <label htmlFor="message" className="contact__form__group__message__label">
+            {translation("contact.form.message")}
+            <span className="contact__form__message__count">
+              {messageLength} / {maxMessageLength}
+            </span>
+          </label>
+          <div className="contact__form__input__wrapper">
+            <textarea
+              className="contact__form__input"
+              id="message"
+              name="message"
+              value={message}
+              onChange={handleMessageChange}
+              minLength={minMessageLength}
+              maxLength={maxMessageLength}
+              required
+            />
           </div>
         </div>
 
-        <div className="contact__form__group">
-          <label htmlFor="tel">
-            {translation("contact.form.tel")[0]} <span>{translation("contact.form.tel")[1]}</span>
-          </label>
-          <input
-            className="contact__form__input"
-            type="tel"
-            id="tel"
-            name="tel"
-            value={tel}
-            onChange={(e) => setTel(e.target.value)}
-          />
-        </div>
-
-        <div className="contact__form__group">
-          <label htmlFor="message">{translation("contact.form.message")}</label>
-          <textarea
-            className="contact__form__input"
-            id="message"
-            name="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          />
-        </div>
-
-        <button type="submit" className="contact__form__submit-button">
+        <button type="submit" className={`contact__form__submit-button ${isValid ? "active" : ""}`} disabled={!isValid}>
           {translation("contact.form.submit")} <FontAwesomeIcon icon={faPaperPlane} />
         </button>
       </form>

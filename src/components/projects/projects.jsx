@@ -2,7 +2,7 @@ import "./projects.scss";
 import projectData from "../../data/static/projects.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "../../context/language-context";
-import { faGithub, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import WebComponentsIcon from "../web-components-icon/web-components-icon";
 import SliderBullets from "../slider-bullets/slider-bullets";
 import NavigationButton from "../navigation-button/navigation-button";
@@ -94,15 +94,6 @@ const Projects = () => {
               <p className="projects__card__description">{translation(`projects.cards.${project.id}.description`)}</p>
             </a>
 
-            <div
-              className="projects__card__tech"
-              title={`${translation("projects.tech-used")}  ${project.tech.replace(/\b\w/g, (char) =>
-                char.toUpperCase()
-              )}`}
-            >
-              {project.tech === "react" && <FontAwesomeIcon icon={faReact} />}
-              {project.tech === "web components" && <WebComponentsIcon />}
-            </div>
             <a
               href={project.gitHubHref}
               rel="noopener noreferrer"

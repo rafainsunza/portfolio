@@ -66,45 +66,51 @@
     }
 
     &__group {
-      &.invalid {
-        &:hover {
-          & .contact__form__input {
-            background-color: #ffcccf;
-          }
+      & label {
+        font-size: $font-size-xs;
+        color: var(--primary-text);
+        font-weight: 600;
+      }
+
+      & textarea {
+        min-height: 100px;
+        font-size: $font-size-md;
+      }
+
+      &__message {
+        &__label {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 3px;
         }
 
+        &__count {
+          color: var(--secondary-text);
+        }
+      }
+
+      &.invalid {
         & .contact__form__input {
-          border: 2px solid red;
           background-color: #ffcccf;
+          border: 2px solid red;
+
+          &__icon,
+          &__error-message {
+            color: red;
+          }
         }
       }
 
       &.valid {
-        &:hover {
-          & .contact__form__input {
-            background-color: #ccffcf;
+        & .contact__form__input {
+          background-color: #ccffcf;
+          border: 2px solid green;
+
+          &__icon,
+          &__error-message {
+            color: green;
           }
         }
-
-        & .contact__form__input {
-          border: 2px solid green;
-          background-color: #ccffcf;
-        }
-      }
-
-      & label {
-        font-size: $font-size-xs;
-        color: var(--primary-text);
-
-        & span {
-          font-size: $font-size-xxs;
-          color: var(--secondary-text);
-          margin-left: $space-xs;
-        }
-      }
-
-      & textarea {
-        min-height: 75px;
       }
     }
 
@@ -123,14 +129,21 @@
         transform: scale(1.01);
       }
 
+      &__wrapper {
+        position: relative;
+      }
+
+      &__icon {
+        position: absolute;
+        right: $space-xs;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
       &__error-message {
         font-size: $font-size-sm;
-        color: red;
-        margin: $space-xxs 0 $space-xs 0;
-
-        &.displaynone {
-          display: none;
-        }
+        margin-top: $space-xxs;
+        padding-left: $space-xxs;
       }
     }
 
@@ -144,14 +157,14 @@
       background-color: var(--accent);
       color: white;
       opacity: 0.2;
-      transition: opacity 0.3s ease, background-color 0.3s ease;
+      transition: opacity 0.3s ease, filter 0.3s ease;
 
       &.active {
         opacity: 1;
         cursor: pointer;
 
         &:hover {
-          // background-color: lighten(#8e8558, 5%);
+          filter: brightness(115%);
         }
       }
 

@@ -21,7 +21,6 @@
 
   "projects": {
     "title": "Mijn projecten",
-    "tech-used": "Gebouwd met",
     "view-repo": "Bekijk de repo",
     "cards": {
       "onderde10": {
@@ -142,14 +141,15 @@
     "message": "Interesse? Vragen? Feedback? Stuur me een berichtje!",
     "form": {
       "name": "NAAM",
-      "tel": ["TELEFOON", "(OPTIONEEL)"],
+      "confirmEmail": "BEVESTIG EMAIL",
       "message": "BERICHT",
       "submit": "VERSTUUR",
       "errors": {
         "nameRequired": "Vul een naam in.",
         "nameTooShort": "Naam is te kort.",
         "invalidCharacters": "Vul een geldige naam in.",
-        "invalidEmail": "Voer een geldige email in."
+        "invalidEmail": "Voer een geldige email in.",
+        "emailsDontMatch": "Emails komen niet overeen."
       }
     }
   }
