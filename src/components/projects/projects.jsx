@@ -80,8 +80,6 @@ const Projects = () => {
 
   return (
     <div className="projects">
-      <h1 className="section__title">{translation("projects.title")}</h1>
-
       <div className="projects__cards" ref={containerRef}>
         {projectData.map((project) => (
           <div className="projects__card" key={project.name}>

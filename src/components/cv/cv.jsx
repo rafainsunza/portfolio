@@ -11,11 +11,6 @@ const Cv = () => {
   const { translation } = useTranslations();
   return (
     <div className="cv">
-      <div className="cv__header">
-        <h1 className="section__title">{translation("cv.title")} </h1>
-        <DownloadPdf />
-      </div>
-
       <div className="cv__wrapper">
         <div className="cv__side-content">
           <h3 className="cv__side-content__name">

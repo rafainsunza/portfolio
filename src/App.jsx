@@ -8,10 +8,13 @@ import Projects from "./components/projects/projects";
 import Cv from "./components/cv/cv";
 import About from "./components/about/about";
 import Contact from "./components/contact/contact";
+import DownloadPdf from "./components/download-pdf/download-pdf";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "./context/language-context";
 
 const App = () => {
+  const { translation } = useTranslations();
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
   const navbarRef = useRef(null);
   const menuButtonRef = useRef(null);
@@ -88,14 +91,21 @@ const App = () => {
         </section>
 
         <section id="projects" ref={sectionRefs.projects}>
+          <h1 className="section__title">{translation("projects.title")}</h1>
           <Projects />
         </section>
 
         <section id="cv" ref={sectionRefs.cv}>
+          <div className="cv__header">
+            <h1 className="section__title">{translation("cv.title")}</h1>
+            <DownloadPdf />
+          </div>
           <Cv />
         </section>
 
         <section id="about" ref={sectionRefs.about}>
+          <h1 className="section__title">{translation("about.title")}</h1>
+
           <About />
         </section>
 

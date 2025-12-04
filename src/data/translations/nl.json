@@ -136,6 +136,10 @@
     }
   },
 
+  "about": {
+    "title": "Over mij"
+  },
+
   "contact": {
     "title": "Neem contact op",
     "message": "Interesse? Vragen? Feedback? Stuur me een berichtje!",

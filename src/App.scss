@@ -12,10 +12,6 @@ html {
     background: var(--border);
     border-radius: 4px;
   }
-
-  @media (min-width: $breakpoint-lg) and (min-height: 700px) {
-    scroll-snap-type: y mandatory;
-  }
 }
 
 body {
@@ -48,19 +44,25 @@ section {
   height: auto;
   width: 100%;
   max-width: $breakpoint-xl;
-  padding: $space-sm $space-xs $space-sm $space-xs;
-  scroll-snap-align: start;
+  padding: 0 $space-xs 0 $space-xs;
+  scroll-margin-top: 75px;
+
+  &#projects,
+  &#cv,
+  &#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100dvh - 70px); // 100 viewport height minus height of header
+    margin-bottom: 150px;
+
+    @media (min-width: $breakpoint-md-lg) {
+      min-height: calc(100dvh - 75px);
+    }
+  }
 
   @media (min-width: $breakpoint-md) {
-    padding: $space-sm $space-lg $space-md $space-lg;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    padding: 75px $space-lg $space-sm $space-lg;
-  }
-
-  @media (min-width: $breakpoint-lg) and (min-height: 700px) {
-    height: 100dvh;
+    padding: 0 $space-lg 0 $space-lg;
   }
 
   @media (min-width: $breakpoint-xl) {
@@ -68,21 +70,22 @@ section {
   }
 }
 
-.hero,
-.projects,
-.cv,
-.about,
-.contact {
-  min-height: calc(100dvh - 110px); // height of header + section padding
+.cv__header {
+  display: flex;
+  justify-content: space-between;
+}
 
-  @media (min-width: $breakpoint-lg) {
-    height: calc(100dvh - 170px); // height of header + section padding
+.hero,
+.contact {
+  min-height: calc(100dvh - 70px); // 100 viewport height minus height of header
+
+  @media (min-width: $breakpoint-md-lg) {
+    min-height: calc(100dvh - 75px);
   }
 }
 
 h1,
 .section__title {
-  margin-bottom: $space-md;
   font-family: var(--secondary-font);
   font-size: $font-size-xxl;
   letter-spacing: -4px;
