@@ -75,8 +75,9 @@
 
     &__github-link {
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      gap: $space-xs;
       height: 85px;
       width: max-content;
       margin: 0 auto;
@@ -86,7 +87,10 @@
 
       &:hover {
         color: var(--primary-text);
-        transform: scale(1.25);
+      }
+
+      &__text {
+        font-size: $font-size-sm;
       }
     }
   }

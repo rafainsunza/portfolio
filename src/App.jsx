@@ -6,6 +6,7 @@ import Branding from "./components/branding/branding";
 import Hero from "./components/hero/hero";
 import Projects from "./components/projects/projects";
 import Cv from "./components/cv/cv";
+import About from "./components/about/about";
 import Contact from "./components/contact/contact";
 
 import { useEffect, useRef, useState } from "react";
@@ -95,7 +96,7 @@ const App = () => {
         </section>
 
         <section id="about" ref={sectionRefs.about}>
-          ABOUT
+          <About />
         </section>
 
         <section id="contact" ref={sectionRefs.contact}>

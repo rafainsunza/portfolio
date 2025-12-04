@@ -15,6 +15,11 @@
   background-color: var(--primary-text);
   color: var(--background);
   overflow: hidden;
+  transition: transform 0.1s ease;
+
+  &:active {
+    transform: scale(1.05);
+  }
 
   @media (min-width: $breakpoint-sm) {
     width: 150px;

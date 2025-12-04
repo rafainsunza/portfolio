@@ -135,6 +135,11 @@
     }
   },
 
+  "about": {
+    "title": "About me",
+    "content": "I started my first hospitality job at 15, working my way up from dishwasher to bar manager at one of Amsterdam’s top cocktail bars. When COVID hit, I discovered a passion for coding and began learning Python and JavaScript through online courses. I realized how much I enjoyed seeing things I created come to life. Since then, I’ve focused on web development. I completed a project-based internship, building mock projects designed to simulate real-world workflows, and also delivered two real-world projects independently. I have experience with both Web Components and React, focusing on front-end development, with plans to expand into back-end in the future. Outside of coding, I train Brazilian Jiu-Jitsu, which has taught me discipline, perseverance, and the value of tackling complex problems step by step. I’m now looking to take the next step into tech through a junior role, internship, or traineeship where I can grow, learn, and contribute to meaningful projects."
+  },
+
   "contact": {
     "title": "Get in touch",
     "message": "Like what you saw? Curious about something? Got feedback? Just drop me a message!",

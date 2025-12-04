@@ -102,6 +102,7 @@ const Projects = () => {
               title={translation("projects.view-repo")}
             >
               <FontAwesomeIcon icon={faGithub} />
+              <span className="projects__card__github-link__text">{translation("projects.view-repo")}</span>
             </a>
           </div>
         ))}

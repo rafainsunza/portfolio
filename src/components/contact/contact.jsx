@@ -3,7 +3,7 @@ import "./contact.scss";
 import { useTranslations } from "../../context/language-context";
 import SocialMediaBox from "../social-media-box/social-media-box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faClose, faSpinner, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faSpinner, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import React, { useEffect, useState } from "react";
 import validator from "validator";
@@ -249,7 +249,7 @@ const Contact = () => {
 
         <button
           type="submit"
-          className={`contact__form__submit-button ${isValid && !isSending ? "active" : ""}`}
+          className={`contact__form__submit-button ${isValid ? "active" : ""}`}
           disabled={!isValid || isSending}
         >
           {!isSending ? (
