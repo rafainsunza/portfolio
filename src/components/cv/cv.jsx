@@ -71,11 +71,11 @@ const Cv = () => {
             </ul>
           </div>
 
-          <div className="cv__side-content__item">
+          <div className="cv__side-content__item portrait">
             <img src={cvPortrait} alt="" />
           </div>
 
-          <div className="cv__side-content__item">
+          <div className="cv__side-content__item skills">
             <h4 className="cv__side-content__title">{translation("cv.side-content.skills.title")}</h4>
             <ul className="cv__side-content__list">
               {translation("cv.side-content.skills.items").map((item, index) => (

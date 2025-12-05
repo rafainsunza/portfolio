@@ -50,15 +50,19 @@ section {
   &#projects,
   &#cv,
   &#about {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     min-height: calc(100dvh - 70px); // 100 viewport height minus height of header
     margin-bottom: 150px;
 
     @media (min-width: $breakpoint-md-lg) {
       min-height: calc(100dvh - 75px);
     }
+  }
+
+  &#projects,
+  &#cv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   @media (min-width: $breakpoint-md) {
@@ -73,6 +77,7 @@ section {
 .cv__header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: $space-xl;
 }
 
 .hero,
