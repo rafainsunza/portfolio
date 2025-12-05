@@ -58,9 +58,14 @@
       &.portrait {
         display: flex;
         justify-content: center;
+        align-items: center;
+
+        @media (min-width: $breakpoint-lg) {
+          align-items: normal;
+        }
 
         & img {
-          width: 175px;
+          width: 185px;
           height: max-content;
           border: 4px solid var(--accent);
           border-radius: 100%;
@@ -146,8 +151,6 @@
 
   &__main-content {
     padding: $space-md $space-sm;
-    // margin: 0 auto;
-    // max-width: 700px;
 
     @media (min-width: $breakpoint-lg) {
       background-color: #fafafa;
@@ -181,6 +184,7 @@
         display: flex;
 
         & svg {
+          // List bullet point
           font-size: 5px;
           margin: $space-xxs $space-xs 0 0;
         }

@@ -17,6 +17,7 @@ const SocialMediaBox = () => {
       >
         <FontAwesomeIcon icon={faLinkedin} />
       </a>
+
       <a
         href="https://github.com/rafainsunza"
         className="social-media-box__link"
