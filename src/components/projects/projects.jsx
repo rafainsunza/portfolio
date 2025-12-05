@@ -7,6 +7,7 @@ import WebComponentsIcon from "../web-components-icon/web-components-icon";
 import SliderBullets from "../slider-bullets/slider-bullets";
 import NavigationButton from "../navigation-button/navigation-button";
 import { useEffect, useRef, useState } from "react";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   const { translation } = useTranslations();
@@ -36,9 +37,8 @@ const Projects = () => {
       const windowWidth = window.innerWidth;
       let cardsPerPage;
 
-      if (windowWidth < 600) cardsPerPage = 1;
-      else if (windowWidth >= 600 && windowWidth < 1024) cardsPerPage = 2;
-      else cardsPerPage = 3;
+      if (windowWidth < 880) cardsPerPage = 1;
+      else if (windowWidth >= 880) cardsPerPage = 2;
 
       return cards.length - cardsPerPage + 1;
     };
@@ -83,25 +83,17 @@ const Projects = () => {
       <div className="projects__cards" ref={containerRef}>
         {projectData.map((project) => (
           <div className="projects__card" key={project.name}>
-            <a href={project.href} rel="noopener noreferrer" target="_blank" className="projects__card-link">
+            <button className="projects__card-button">
               <div className="projects__card__preview">
+                <div className="projects__card__preview__layover">
+                  <FontAwesomeIcon icon={faEye} />
+                </div>
                 <img src={project.screenshot} alt="" />
               </div>
               <h3 className="projects__card__title">{project.name}</h3>
 
               <p className="projects__card__description">{translation(`projects.cards.${project.id}.description`)}</p>
-            </a>
-
-            <a
-              href={project.gitHubHref}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="projects__card__github-link"
-              title={translation("projects.view-repo")}
-            >
-              <FontAwesomeIcon icon={faGithub} />
-              <span className="projects__card__github-link__text">{translation("projects.view-repo")}</span>
-            </a>
+            </button>
           </div>
         ))}
       </div>

@@ -47,7 +47,14 @@ section {
   padding: 0 $space-xs 0 $space-xs;
   scroll-margin-top: 75px;
 
-  &#projects,
+  @media (min-width: $breakpoint-md) {
+    padding: 0 $space-lg 0 $space-lg;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    margin: 0 auto;
+  }
+
   &#cv,
   &#about {
     min-height: calc(100dvh - 70px); // 100 viewport height minus height of header
@@ -58,19 +65,18 @@ section {
     }
   }
 
-  &#projects,
   &#cv {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  @media (min-width: $breakpoint-md) {
-    padding: 0 $space-lg 0 $space-lg;
-  }
+  &#projects {
+    margin-bottom: 150px;
 
-  @media (min-width: $breakpoint-xl) {
-    margin: 0 auto;
+    & .section__title {
+      margin-bottom: $space-xl;
+    }
   }
 }
 

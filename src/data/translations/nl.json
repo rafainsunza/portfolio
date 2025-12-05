@@ -24,22 +24,28 @@
     "view-repo": "Bekijk de repo",
     "cards": {
       "onderde10": {
-        "description": "Interactief scorebord om punten bij te houden in een kaartspel."
+        "description": "F4F Games - Interactief scorebord",
+        "lightbox-description": "Interactief scorebord om punten bij te houden in een kaartspel."
       },
       "eredivisie": {
-        "description": "Webapp die Eredivisie-statistieken ophaalt via een REST API, met caching om limieten te omzeilen."
+        "description": "Persoonlijk project - Eredivisie statistieken",
+        "lightbox-description": "Webapp die Eredivisie-statistieken ophaalt via een REST API, met caching om limieten te omzeilen."
       },
       "ecommerce": {
-        "description": "Dynamische productpagina met interactieve winkelwagen en een afbeeldingenslider met lightbox."
+        "description": "Persoonlijk project - Ecommerce product pagina",
+        "lightbox-description": "Dynamische productpagina met interactieve winkelwagen en een afbeeldingenslider met lightbox."
       },
       "eitalexander": {
-        "description": "Bestaande website herontworpen en opnieuw ontwikkeld met verbeterde UX en responsive design."
+        "description": "EITA - School website",
+        "lightbox-description": "Bestaande website herontworpen en opnieuw ontwikkeld met verbeterde UX en responsive design."
       },
       "geoinfo": {
-        "description": "Interactieve landendatabase met REST APIs en lazy loading voor snellere prestaties."
+        "description": "Persoonlijk project - Landendatabase verkenner",
+        "lightbox-description": "Interactieve landendatabase met REST APIs en lazy-loaded content."
       },
       "portfolio": {
-        "description": "Portfolio website met dynamische projectgalerij en meertalige ondersteuning."
+        "description": "Persoonlijk project - Mijn portfolio website",
+        "lightbox-description": "Portfolio website met dynamische projectgalerij en meertalige ondersteuning."
       }
     }
   },
