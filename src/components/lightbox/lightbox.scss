@@ -1,0 +1,68 @@
+@use "../../index.scss" as *;
+
+.lightbox {
+  &__card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: grid;
+    grid-template-rows: max-content max-content 0.5fr 2fr max-content;
+    background-color: var(--container-background);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    max-width: 625px;
+    min-height: 450px;
+    width: 90%;
+    overflow: hidden;
+
+    &__close-button {
+      justify-self: end;
+      width: 35px;
+      height: 35px;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      margin-right: $space-sm;
+      color: var(--primary-text);
+      cursor: pointer;
+    }
+
+    &__title,
+    &__description {
+      padding: $space-xxs $space-xs;
+
+      @media (min-width: $breakpoint-xs) {
+        padding: $space-xs $space-sm;
+      }
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      max-width: 200px;
+      border-radius: 25px;
+      margin-left: $space-xs;
+      background-color: var(--primary-text);
+      color: var(--background);
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      @media (min-width: $breakpoint-xs) {
+        margin-left: $space-sm;
+      }
+
+      &:hover {
+        background-color: var(--accent);
+        color: #f1f1f1;
+      }
+
+      &__wrapper {
+        padding: $space-sm 0;
+      }
+    }
+  }
+}

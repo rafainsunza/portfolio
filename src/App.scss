@@ -17,7 +17,7 @@ html {
 body {
   background-color: var(--background);
   color: var(--primary-text);
-  font-family: var(--primary-font);
+  font-family: $primary-font;
   font-size: $font-size-base;
 }
 
@@ -73,6 +73,7 @@ section {
 
   &#projects {
     margin-bottom: 150px;
+    position: relative;
 
     & .section__title {
       margin-bottom: $space-xl;
@@ -97,7 +98,7 @@ section {
 
 h1,
 .section__title {
-  font-family: var(--secondary-font);
+  font-family: $secondary-font;
   font-size: $font-size-xxl;
   letter-spacing: -4px;
   word-spacing: -10px;

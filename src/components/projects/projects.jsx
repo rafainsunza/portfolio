@@ -2,19 +2,48 @@ import "./projects.scss";
 import projectData from "../../data/static/projects.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "../../context/language-context";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import WebComponentsIcon from "../web-components-icon/web-components-icon";
 import SliderBullets from "../slider-bullets/slider-bullets";
 import NavigationButton from "../navigation-button/navigation-button";
+import Lightbox from "../lightbox/lightbox";
 import { useEffect, useRef, useState } from "react";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   const { translation } = useTranslations();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxProject, setLightboxProjext] = useState(null);
   const [pageCount, setPageCount] = useState(null);
   const [currentPage, setCurrentPage] = useState(null);
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
+  const [theme, setTheme] = useState(document.documentElement.getAttribute("data-theme"));
+
+  useEffect(() => {
+    const updateTheme = () => {
+      setTheme(document.documentElement.getAttribute("data-theme"));
+    };
+
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleCardButtonClick = (project) => {
+    setLightboxProjext(project);
+    setLightboxOpen(true);
+  };
+
+  const handleCardButtonClose = () => {
+    setLightboxProjext(null);
+    setLightboxOpen(false);
+  };
+
+  // useEffect(() => {
+  //   document.documentElement.style.overflow = lightboxOpen ? "hidden" : "";
+  // }, [lightboxOpen]);
 
   const scrollToPage = (index) => {
     const container = containerRef.current;
@@ -79,33 +108,46 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="projects">
-      <div className="projects__cards" ref={containerRef}>
-        {projectData.map((project) => (
-          <div className="projects__card" key={project.name}>
-            <button className="projects__card-button">
-              <div className="projects__card__preview">
-                <div className="projects__card__preview__layover">
-                  <FontAwesomeIcon icon={faEye} />
+    <>
+      {lightboxOpen && <Lightbox isOpen={lightboxOpen} project={lightboxProject} onClose={handleCardButtonClose} />}
+
+      <div className="projects">
+        <div className="projects__cards" ref={containerRef}>
+          {projectData.map((project) => (
+            <div className="projects__card" key={project.name}>
+              <button className="projects__card-button" onClick={() => handleCardButtonClick(project)}>
+                <div className="projects__card__preview">
+                  <div className="projects__card__preview__layover">
+                    <FontAwesomeIcon icon={faEye} />
+                  </div>
+                  <img
+                    src={
+                      project.id !== "portfolio"
+                        ? project.screenshot
+                        : theme === "dark"
+                        ? project.screenshot
+                        : project.screenshot__light
+                    }
+                    alt=""
+                  />
                 </div>
-                <img src={project.screenshot} alt="" />
-              </div>
-              <h3 className="projects__card__title">{project.name}</h3>
+                <h3 className="projects__card__title">{project.name}</h3>
 
-              <p className="projects__card__description">{translation(`projects.cards.${project.id}.description`)}</p>
-            </button>
-          </div>
-        ))}
+                <p className="projects__card__description">{translation(`projects.cards.${project.id}.description`)}</p>
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="projects__card-navigation">
+          <NavigationButton left setCurrentPage={setCurrentPage} disabled={currentPage === 0} />
+
+          <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
+          <NavigationButton right setCurrentPage={setCurrentPage} disabled={currentPage === pageCount - 1} />
+        </div>
       </div>
-
-      <div className="projects__card-navigation">
-        <NavigationButton left setCurrentPage={setCurrentPage} disabled={currentPage === 0} />
-
-        <SliderBullets sliderBulletCount={pageCount} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-
-        <NavigationButton right setCurrentPage={setCurrentPage} disabled={currentPage === pageCount - 1} />
-      </div>
-    </div>
+    </>
   );
 };
 

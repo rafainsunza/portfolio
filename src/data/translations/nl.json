@@ -25,29 +25,33 @@
     "cards": {
       "onderde10": {
         "description": "F4F Games - Interactief scorebord",
-        "lightbox-description": "Interactief scorebord om punten bij te houden in een kaartspel."
+        "lightbox-description": "Een interactieve scoreboard gebouwd op basis van een aangeleverd design, met meertalige ondersteuning en vloeiende UI-interacties speciaal gemaakt voor het kaartspel Onder de 10."
       },
       "eredivisie": {
         "description": "Persoonlijk project - Eredivisie statistieken",
-        "lightbox-description": "Webapp die Eredivisie-statistieken ophaalt via een REST API, met caching om limieten te omzeilen."
+        "lightbox-description": "Een Eredivisie-statistiekenviewer geïnspireerd op de officiële website, met API-data, caching en een layout die nauw aansluit op het origineel."
       },
       "ecommerce": {
-        "description": "Persoonlijk project - Ecommerce product pagina",
-        "lightbox-description": "Dynamische productpagina met interactieve winkelwagen en een afbeeldingenslider met lightbox."
+        "description": "Stage project - Ecommerce product pagina",
+        "lightbox-description": "Ontwikkeld tijdens een stage: een dynamische ecommerce-productpagina met een zelfgemaakte image slider, lightbox en interactieve winkelwagen."
       },
       "eitalexander": {
         "description": "EITA - School website",
-        "lightbox-description": "Bestaande website herontworpen en opnieuw ontwikkeld met verbeterde UX en responsive design."
+        "lightbox-description": "De schoolwebsite volledig opnieuw ontworpen om de oude blogachtige stijl te vervangen door een modernere, gebruiksvriendelijkere en interactievere ervaring, gebaseerd op de feedback van de eigenaar."
       },
       "geoinfo": {
-        "description": "Persoonlijk project - Landendatabase verkenner",
-        "lightbox-description": "Interactieve landendatabase met REST APIs en lazy-loaded content."
+        "description": "Stage project - Landen explorer",
+        "lightbox-description": "Een interactieve landen explorer met zoekfunctionaliteit, dynamische content-toggels en lazy-loaded API-data voor een snellere browse-ervaring."
       },
       "portfolio": {
         "description": "Persoonlijk project - Mijn portfolio website",
-        "lightbox-description": "Portfolio website met dynamische projectgalerij en meertalige ondersteuning."
+        "lightbox-description": "De website die je nu bekijkt. Volledig ontworpen en gecodeerd door mij. Als je dit leest, werkt hij al!"
       }
     }
+  },
+
+  "lightbox": {
+    "goto-website": "Ga naar Website"
   },
 
   "cv": {

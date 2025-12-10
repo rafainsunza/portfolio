@@ -9,6 +9,15 @@
   },
 
   {
+    "id": "eitalexander",
+    "name": "Eitalexander",
+    "screenshot": "/images/projects/eitalexander.png",
+    "href": "https://eitalexander.com/",
+    "gitHubHref": "https://github.com/rafainsunza/eita",
+    "tech": "web components"
+  },
+
+  {
     "id": "eredivisie",
     "name": "Eredivisie",
     "screenshot": "/images/projects/eredivisie.png",
@@ -25,14 +34,7 @@
     "gitHubHref": "https://github.com/rafainsunza/ecommerce-product-page/",
     "tech": "web components"
   },
-  {
-    "id": "eitalexander",
-    "name": "Eitalexander",
-    "screenshot": "/images/projects/eitalexander.png",
-    "href": "https://eitalexander.com/",
-    "gitHubHref": "https://github.com/rafainsunza/eita",
-    "tech": "web components"
-  },
+
   {
     "id": "geoinfo",
     "name": "Geo Info",
@@ -41,10 +43,12 @@
     "gitHubHref": "https://github.com/rafainsunza/country-data",
     "tech": "web components"
   },
+
   {
     "id": "portfolio",
     "name": "Portfolio",
     "screenshot": "/images/projects/portfolio.png",
+    "screenshot__light": "images/projects/portfolio__light.png",
     "href": "http://localhost:5173/",
     "gitHubHref": "https://github.com/rafainsunza/portfolio",
     "tech": "react"

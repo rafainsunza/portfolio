@@ -25,30 +25,35 @@
     "cards": {
       "onderde10": {
         "description": "F4F Games - Interactive scoreboard",
-        "lightbox-description": "Interactive scoreboard for tracking points in a card game."
+        "lightbox-description": "Built an interactive scoreboard based on a provided design, including multilingual support and smooth UI interactions tailored for the card game Onder de 10."
       },
       "eredivisie": {
         "description": "Personal project - Eredivisie stats",
-        "lightbox-description": "Web app fetching Eredivisie stats via REST API, with caching to handle rate limits."
+        "lightbox-description": "Created an Eredivisie stats viewer inspired by the official league website, using API data, caching, and a layout closely modeled after the original design."
       },
       "ecommerce": {
-        "description": "Personal project - Ecommerce product page",
-        "lightbox-description": "Dynamic product page with interactive cart and an image slider with lightbox."
+        "description": "Internship project - Ecommerce product page",
+        "lightbox-description": "Developed during an internship: a dynamic ecommerce product page with a custom-made image slider, lightbox, and interactive cart."
       },
       "eitalexander": {
         "description": "EITA - School website",
-        "lightbox-description": "Redesigned and redeveloped an existing website with improved UX and responsive design."
+        "lightbox-description": "Redesigned the school website to replace the old blog-style layout with a more modern, interactive, and student-friendly experience based on the owner's feedback."
       },
       "geoinfo": {
-        "description": "Personal project - Country data explorer",
-        "lightbox-description": "Interactive country data explorer using REST APIs with lazy-loaded content."
+        "description": "Internship project - Country data explorer",
+        "lightbox-description": "Interactive country explorer with search functionality, dynamic content toggles, and lazy-loaded API data for a faster browsing experience."
       },
       "portfolio": {
         "description": "Personal project - My portfolio website",
-        "lightbox-description": "Portfolio website featuring a dynamic project gallery and multilingual support."
+        "lightbox-description": "The website you're browsing right now. Fully designed and coded by me. If you're reading this, it's already working!"
       }
     }
   },
+
+  "lightbox": {
+    "goto-website": "Go to Website"
+  },
+
   "cv": {
     "title": "My CV",
     "side-content": {
