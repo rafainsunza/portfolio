@@ -1,1 +1,128 @@
 @use "../../index.scss" as *;
+
+.about {
+  &__timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px;
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: $space-md;
+    max-width: 380px;
+
+    @media (min-width: $breakpoint-sm) {
+      max-width: 700px;
+      grid-template-columns: 1fr 3px 1fr;
+      grid-template-rows: none;
+    }
+
+    &__line {
+      position: relative;
+      grid-row: 1 / -1;
+      grid-column: 2 / 3;
+      background-color: var(--primary-text);
+
+      &__start,
+      &__end {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: var(--primary-text);
+      }
+
+      &__end {
+        top: 100%;
+      }
+    }
+
+    &__items {
+      display: grid;
+      row-gap: $space-lg;
+
+      &.part1 {
+        padding: $space-lg 0;
+      }
+
+      &.part2 {
+        padding-bottom: $space-lg;
+
+        @media (min-width: $breakpoint-sm) {
+          & .about__timeline__item {
+            grid-template-columns: 1fr 4fr;
+            padding-top: $space-xxl;
+
+            &__text {
+              grid-column-start: 2;
+            }
+
+            &__title,
+            &__subtitle,
+            &__description {
+              text-align: start;
+            }
+
+            &__icon {
+              grid-row-start: 1;
+              justify-self: start;
+
+              &__line {
+                left: -33px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      column-gap: $space-xs;
+
+      &__title {
+        font-size: $font-size-base;
+        color: var(--accent);
+        text-align: end;
+      }
+
+      &__subtitle {
+        text-align: end;
+        font-size: $font-size-md;
+        font-weight: 600;
+      }
+
+      &__description {
+        text-align: end;
+        font-size: $font-size-sm;
+        color: var(--secondary-text);
+        font-weight: 500;
+      }
+
+      &__icon {
+        position: relative;
+        justify-self: end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--container-background);
+        outline: 3px solid var(--border);
+
+        &__line {
+          position: absolute;
+          width: 30px;
+          height: 3px;
+          background-color: var(--primary-text);
+          top: 50%;
+          right: -33px;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

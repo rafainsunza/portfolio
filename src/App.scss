@@ -19,6 +19,7 @@ body {
   color: var(--primary-text);
   font-family: $primary-font;
   font-size: $font-size-base;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -55,8 +56,7 @@ section {
     margin: 0 auto;
   }
 
-  &#cv,
-  &#about {
+  &#cv {
     min-height: calc(100dvh - 70px); // 100 viewport height minus height of header
     margin-bottom: 150px;
 
@@ -71,9 +71,10 @@ section {
     justify-content: space-between;
   }
 
-  &#projects {
-    margin-bottom: 150px;
+  &#projects,
+  &#about {
     position: relative;
+    margin-bottom: 150px;
 
     & .section__title {
       margin-bottom: $space-xl;

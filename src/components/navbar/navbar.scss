@@ -12,7 +12,7 @@
   gap: $space-lg;
   width: 100%;
   max-width: $breakpoint-xs;
-  height: 90%;
+  height: calc(100dvh - 70px);
   padding: $space-sm $space-xs;
   border: 1px solid var(--border);
   border-radius: 7.5px 7.5px 0 0;
