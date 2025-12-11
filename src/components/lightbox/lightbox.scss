@@ -8,7 +8,6 @@
     transform: translate(-50%, -50%);
     z-index: 999;
     display: grid;
-    grid-template-rows: max-content max-content 0.5fr 2fr max-content;
     background-color: var(--container-background);
     border: 2px solid var(--border);
     border-radius: 10px;
