@@ -29,6 +29,25 @@
       cursor: pointer;
     }
 
+    &__preview {
+      aspect-ratio: 16 / 9;
+
+      &__link {
+        & img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &__skeleton {
+        height: 100%;
+        width: 100%;
+        background-color: var(--border);
+        filter: brightness(90%);
+        animation: pulse-skeleton 1.4s ease-in-out infinite;
+      }
+    }
+
     &__title,
     &__description {
       padding: $space-xxs $space-xs;
@@ -64,5 +83,17 @@
         padding: $space-sm 0;
       }
     }
+  }
+}
+
+@keyframes pulse-skeleton {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
   }
 }

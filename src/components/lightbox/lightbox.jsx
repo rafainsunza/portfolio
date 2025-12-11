@@ -7,6 +7,7 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 const Lightbox = ({ isOpen, onClose, project }) => {
   const { translation } = useTranslations();
   const [theme, setTheme] = useState(document.documentElement.getAttribute("data-theme"));
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const updateTheme = () => {
@@ -31,6 +32,8 @@ const Lightbox = ({ isOpen, onClose, project }) => {
         </button>
 
         <div className="lightbox__card__preview">
+          {!imageLoaded && <div className="lightbox__card__preview__skeleton"></div>}
+
           <a href="" rel="noopener noreferrer" target="_blank" className="lightbox__card__preview__link">
             <img
               src={
@@ -41,6 +44,7 @@ const Lightbox = ({ isOpen, onClose, project }) => {
                   : project.screenshot__light
               }
               alt=""
+              onLoad={() => setImageLoaded(true)}
             />
           </a>
         </div>

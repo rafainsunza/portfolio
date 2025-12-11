@@ -14,9 +14,10 @@ const Projects = () => {
   const [lightboxProject, setLightboxProjext] = useState(null);
   const [pageCount, setPageCount] = useState(null);
   const [currentPage, setCurrentPage] = useState(null);
+  const [theme, setTheme] = useState(document.documentElement.getAttribute("data-theme"));
+  const [imageLoaded, setImageLoaded] = useState(false);
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
-  const [theme, setTheme] = useState(document.documentElement.getAttribute("data-theme"));
 
   useEffect(() => {
     const updateTheme = () => {
@@ -40,10 +41,6 @@ const Projects = () => {
     setLightboxProjext(null);
     setLightboxOpen(false);
   };
-
-  // useEffect(() => {
-  //   document.documentElement.style.overflow = lightboxOpen ? "hidden" : "";
-  // }, [lightboxOpen]);
 
   const scrollToPage = (index) => {
     const container = containerRef.current;
@@ -117,9 +114,13 @@ const Projects = () => {
             <div className="projects__card" key={project.name}>
               <button className="projects__card-button" onClick={() => handleCardButtonClick(project)}>
                 <div className="projects__card__preview">
-                  <div className="projects__card__preview__layover">
-                    <FontAwesomeIcon icon={faEye} />
-                  </div>
+                  {imageLoaded && (
+                    <div className="projects__card__preview__layover">
+                      <FontAwesomeIcon icon={faEye} />
+                    </div>
+                  )}
+
+                  {!imageLoaded && <div className="projects__card__preview__skeleton"></div>}
                   <img
                     src={
                       project.id !== "portfolio"
@@ -129,6 +130,7 @@ const Projects = () => {
                         : project.screenshot__light
                     }
                     alt=""
+                    onLoad={() => setImageLoaded(true)}
                   />
                 </div>
                 <h3 className="projects__card__title">{project.name}</h3>
