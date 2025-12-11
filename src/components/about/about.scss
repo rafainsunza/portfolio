@@ -7,9 +7,10 @@
     grid-template-rows: repeat(2, 1fr);
     column-gap: $space-md;
     max-width: 380px;
+    margin: 0 auto;
 
     @media (min-width: $breakpoint-sm) {
-      max-width: 700px;
+      max-width: 900px;
       grid-template-columns: 1fr 3px 1fr;
       grid-template-rows: none;
     }
@@ -41,17 +42,20 @@
       display: grid;
       row-gap: $space-lg;
 
+      @media (min-width: $breakpoint-sm) {
+        row-gap: $space-xxl;
+      }
+
       &.part1 {
         padding: $space-lg 0;
       }
 
       &.part2 {
-        padding-bottom: $space-lg;
-
         @media (min-width: $breakpoint-sm) {
+          padding-top: 120px;
+
           & .about__timeline__item {
             grid-template-columns: 1fr 4fr;
-            padding-top: $space-xxl;
 
             &__text {
               grid-column-start: 2;

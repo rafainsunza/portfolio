@@ -13,13 +13,16 @@ import {
   faUserTie,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 const About = () => {
   const { translation } = useTranslations();
   const timeline = translation("about.timeline");
   const half = Math.ceil(timeline.length / 2);
-  const itemsA = timeline.slice(0, half);
-  const itemsB = timeline.slice(half);
+  const [items, setItems] = useState({
+    itemsA: [],
+    itemsB: [],
+  });
 
   const icons = {
     utensils: faUtensils,
@@ -34,6 +37,33 @@ const About = () => {
     cheers: faChampagneGlasses,
   };
 
+  useEffect(() => {
+    const sortItems = (windowWidth) => {
+      let itemsA;
+      let itemsB;
+
+      if (windowWidth < 600) {
+        itemsA = timeline.slice(0, half);
+        itemsB = timeline.slice(half);
+      } else {
+        itemsA = timeline.filter((_, i) => i % 2 === 0);
+        itemsB = timeline.filter((_, i) => i % 2 === 1);
+      }
+
+      setItems({
+        itemsA: itemsA,
+        itemsB: itemsB,
+      });
+    };
+
+    sortItems(window.innerWidth);
+
+    const handleResize = () => sortItems(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="about">
       <div className="about__timeline">
@@ -43,7 +73,7 @@ const About = () => {
         </div>
 
         <div className="about__timeline__items part1">
-          {itemsA.map((item, index) => (
+          {items.itemsA.map((item, index) => (
             <div className="about__timeline__item" key={index}>
               <div className="about__timeline__item__text">
                 <h4 className="about__timeline__item__title">{item.year}</h4>
@@ -60,7 +90,7 @@ const About = () => {
         </div>
 
         <div className="about__timeline__items part2">
-          {itemsB.map((item, index) => (
+          {items.itemsB.map((item, index) => (
             <div className="about__timeline__item" key={index}>
               <div className="about__timeline__item__text">
                 <h4 className="about__timeline__item__title">{item.year}</h4>
