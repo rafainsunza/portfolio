@@ -148,6 +148,96 @@
 
   "about": {
     "title": "About me",
+    "cards": [
+      {
+        "title": "A bit about me",
+        "content": [
+          {
+            "id": "baby",
+            "label": "Currently raising a tiny human",
+            "value": "months old",
+            "icon": "baby"
+          },
+          {
+            "id": "coffee",
+            "label": "Powered by caffeine",
+            "value": "...most days",
+            "icon": "coffee"
+          },
+          {
+            "id": "bjj",
+            "label": "BJJ student",
+            "value": "never not learning",
+            "icon": "bjj"
+          },
+          {
+            "id": "football",
+            "label": "Football fan",
+            "value": "on the couch for every game",
+            "icon": "football"
+          }
+        ]
+      },
+
+      {
+        "title": "My toolkit",
+        "content": [
+          {
+            "id": "js",
+            "label": "Javascript",
+            "icon": "js"
+          },
+          {
+            "id": "react",
+            "label": "React",
+            "icon": "react"
+          },
+          { "id": "webcomponents", "label": "Web Components", "icon": "webcomponents" },
+          {
+            "id": "sass",
+            "label": "SCSS",
+            "icon": "sass"
+          },
+          {
+            "id": "editor",
+            "label": "VS Code",
+            "icon": "editor"
+          },
+          {
+            "id": "git",
+            "label": "Git & GitHub",
+            "icon": "git"
+          }
+        ]
+      },
+
+      {
+        "title": "But enough about me, here's a bit about you...",
+        "content": [
+          {
+            "id": "browser",
+            "label": "Your browser",
+            "icon": "browser"
+          },
+          {
+            "id": "screen",
+            "label": "Screen size",
+            "icon": "screen"
+          },
+          {
+            "id": "mouse",
+            "label": "Things clicked",
+            "icon": "mouse"
+          },
+          {
+            "id": "clock",
+            "label": "Time spent here",
+            "icon": "clock"
+          }
+        ]
+      }
+    ],
+
     "timeline": [
       {
         "year": "2006",
