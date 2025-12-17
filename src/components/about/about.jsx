@@ -29,8 +29,8 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 const About = () => {
   const { translation } = useTranslations();
 
-  const timeline = translation("about.timeline");
-  const half = Math.ceil(timeline.length / 2);
+  const timelineItems = translation("about.timeline.items");
+  const half = Math.ceil(timelineItems.length / 2);
   const [items, setItems] = useState({
     itemsA: [],
     itemsB: [],
@@ -99,11 +99,11 @@ const About = () => {
       let itemsB;
 
       if (windowWidth < 600) {
-        itemsA = timeline.slice(0, half);
-        itemsB = timeline.slice(half);
+        itemsA = timelineItems.slice(0, half);
+        itemsB = timelineItems.slice(half);
       } else {
-        itemsA = timeline.filter((_, i) => i % 2 === 0);
-        itemsB = timeline.filter((_, i) => i % 2 === 1);
+        itemsA = timelineItems.filter((_, i) => i % 2 === 0);
+        itemsB = timelineItems.filter((_, i) => i % 2 === 1);
       }
 
       setItems({
@@ -192,7 +192,7 @@ const About = () => {
         ))}
       </div>
 
-      <h4 className="about__timeline__title">From then to now</h4>
+      <h4 className="about__timeline__title">{translation("about.timeline.title")}</h4>
 
       <div className="about__timeline">
         <div className="about__timeline__line">

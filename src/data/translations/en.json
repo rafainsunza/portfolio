@@ -237,68 +237,71 @@
       }
     ],
 
-    "timeline": [
-      {
-        "year": "2006",
-        "title": "Hospitality Jobs",
-        "description": "Worked in various hospitality roles in Amsterdam.",
-        "icon": "utensils"
-      },
-      {
-        "year": "2007-2008",
-        "title": "Lived in Brazil",
-        "description": "Lived in Brazil for a year and worked part-time teaching English.",
-        "icon": "teacher"
-      },
-      {
-        "year": "2008-2010",
-        "title": "Hospitality",
-        "description": "Worked in multiple restaurants in Amsterdam.",
-        "icon": "bell"
-      },
-      {
-        "year": "2011-2014",
-        "title": "Bartender at NJOY Cocktailbar",
-        "description": "Started working in a top cocktail bar in Amsterdam.",
-        "icon": "cocktail"
-      },
-      {
-        "year": "2014-2015",
-        "title": "Vila Kalango, Brazil",
-        "description": "Returned to Brazil for a year and worked at a boutique hotel.",
-        "icon": "beach"
-      },
-      {
-        "year": "2015-2019",
-        "title": "Bar Manager",
-        "description": "Started managing a top cocktail bar in Amsterdam.",
-        "icon": "tie"
-      },
-      {
-        "year": "2019-Present",
-        "title": "Head Bartender at Bar Carter",
-        "description": "Responsible for bar operations, training, and guest experience.",
-        "icon": "cheers"
-      },
-      {
-        "year": "2020",
-        "title": "Started Learning to Code",
-        "description": "Began studying web development during the COVID lockdown period.",
-        "icon": "code"
-      },
-      {
-        "year": "2021-Present",
-        "title": "Self-Employed Web Developer",
-        "description": "Worked on personal projects and freelance work focusing on JavaScript, Web Components, and React.",
-        "icon": "laptop"
-      },
-      {
-        "year": "2024",
-        "title": "Internship at Wolfpack Agency",
-        "description": "Completed a web development internship focused on real-world front-end practices.",
-        "icon": "folder"
-      }
-    ]
+    "timeline": {
+      "title": "From then to now",
+      "items": [
+        {
+          "year": "2006",
+          "title": "Hospitality Jobs",
+          "description": "Worked in various hospitality roles in Amsterdam.",
+          "icon": "utensils"
+        },
+        {
+          "year": "2007-2008",
+          "title": "Lived in Brazil",
+          "description": "Lived in Brazil for a year and worked part-time teaching English.",
+          "icon": "teacher"
+        },
+        {
+          "year": "2008-2010",
+          "title": "Hospitality",
+          "description": "Worked in multiple restaurants in Amsterdam.",
+          "icon": "bell"
+        },
+        {
+          "year": "2011-2014",
+          "title": "Bartender at NJOY Cocktailbar",
+          "description": "Started working in a top cocktail bar in Amsterdam.",
+          "icon": "cocktail"
+        },
+        {
+          "year": "2014-2015",
+          "title": "Vila Kalango, Brazil",
+          "description": "Returned to Brazil for a year and worked at a boutique hotel.",
+          "icon": "beach"
+        },
+        {
+          "year": "2015-2019",
+          "title": "Bar Manager",
+          "description": "Started managing a top cocktail bar in Amsterdam.",
+          "icon": "tie"
+        },
+        {
+          "year": "2019-Present",
+          "title": "Head Bartender at Bar Carter",
+          "description": "Responsible for bar operations, training, and guest experience.",
+          "icon": "cheers"
+        },
+        {
+          "year": "2020",
+          "title": "Started Learning to Code",
+          "description": "Began studying web development during the COVID lockdown period.",
+          "icon": "code"
+        },
+        {
+          "year": "2021-Present",
+          "title": "Self-Employed Web Developer",
+          "description": "Worked on personal projects and freelance work focusing on JavaScript, Web Components, and React.",
+          "icon": "laptop"
+        },
+        {
+          "year": "2024",
+          "title": "Internship at Wolfpack Agency",
+          "description": "Completed a web development internship focused on real-world front-end practices.",
+          "icon": "folder"
+        }
+      ]
+    }
   },
 
   "contact": {

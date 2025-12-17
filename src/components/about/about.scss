@@ -10,7 +10,7 @@
     margin-bottom: $space-xxl;
 
     @media (min-width: $breakpoint-lg) {
-      grid-template-columns: 1fr 0.5fr 1fr;
+      grid-template-columns: 1fr 0.5 1fr;
       margin-bottom: 160px;
     }
   }
@@ -21,6 +21,10 @@
     padding: $space-sm;
 
     @media (min-width: $breakpoint-lg) {
+      &:nth-child(2) {
+        justify-content: center;
+      }
+
       &:last-child {
         justify-content: end;
       }
