@@ -13,7 +13,6 @@ import {
   faDumbbell,
   faFolderTree,
   faFutbol,
-  faGlobe,
   faLaptopCode,
   faMartiniGlassCitrus,
   faMugHot,
@@ -24,7 +23,7 @@ import {
 import { faGitAlt, faJs, faReact, faSass } from "@fortawesome/free-brands-svg-icons";
 
 import CustomIcon from "../custom-icon/custom-icon";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 
 const About = () => {
@@ -36,6 +35,11 @@ const About = () => {
     itemsA: [],
     itemsB: [],
   });
+
+  const [screenSize, setScreenSize] = useState("");
+  const [totalClicks, setTotalClicks] = useState(0);
+  const [sessionTime, setSessionTime] = useState(0);
+  const sessionStartRef = useRef(Date.now());
 
   const icons = {
     utensils: faUtensils,
@@ -58,10 +62,35 @@ const About = () => {
     editor: faLaptopCode,
     git: faGitAlt,
     vite: faBoltLightning,
-    browser: faGlobe,
     screen: faDisplay,
     mouse: faComputerMouse,
     clock: faClock,
+  };
+
+  const getBabyAge = () => {
+    const birth = new Date("2024-03-25");
+    const current = new Date();
+
+    let months = (current.getFullYear() - birth.getFullYear()) * 12;
+    months += current.getMonth() - birth.getMonth();
+
+    if (current.getDate() < birth.getDate()) {
+      months -= 1;
+    }
+
+    return months;
+  };
+
+  const formatSessionTime = (ms) => {
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    return `${String(hours).padStart(2, "0")} : ${String(minutes).padStart(2, "0")} : ${String(seconds).padStart(
+      2,
+      "0"
+    )}`;
   };
 
   useEffect(() => {
@@ -82,13 +111,39 @@ const About = () => {
         itemsB: itemsB,
       });
     };
+    const updateSize = () => {
+      setScreenSize(`${window.innerWidth} x ${window.innerHeight}`);
+    };
 
     sortItems(window.innerWidth);
+    updateSize();
 
-    const handleResize = () => sortItems(window.innerWidth);
+    const handleResize = () => {
+      sortItems(window.innerWidth);
+      updateSize();
+    };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleDocumentClick = () => {
+      setTotalClicks((prev) => prev + 1);
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => document.removeEventListener("click", handleDocumentClick);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const elapsedMilliseconds = Date.now() - sessionStartRef.current;
+      setSessionTime(elapsedMilliseconds);
+    }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -117,7 +172,19 @@ const About = () => {
                 </div>
                 <div className="about__card__label__value__wrapper">
                   <div className="about__card__label">{content.label}</div>
-                  {content.value && <div className="about__card__value">{content.value}</div>}
+                  {
+                    <div className="about__card__value">
+                      {content.id === "baby"
+                        ? `${getBabyAge()} ${content.value}`
+                        : content.id === "screen"
+                        ? screenSize
+                        : content.id === "mouse"
+                        ? totalClicks
+                        : content.id === "clock"
+                        ? formatSessionTime(sessionTime)
+                        : content.value}
+                    </div>
+                  }
                 </div>
               </div>
             ))}

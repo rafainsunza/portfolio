@@ -219,11 +219,6 @@
         "title": "But enough about me, here's a bit about you...",
         "content": [
           {
-            "id": "browser",
-            "label": "Your browser",
-            "icon": "browser"
-          },
-          {
             "id": "screen",
             "label": "Screen size",
             "icon": "screen"
