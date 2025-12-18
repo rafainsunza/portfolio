@@ -34,7 +34,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!isValid || isSending) return;
+    const form = new FormData(e.target);
+    const honeyPotValue = form.get("tel");
+
+    if (!isValid || isSending || honeyPotValue) return;
 
     setIsSending(true);
 
@@ -177,6 +180,11 @@ const Contact = () => {
       <SocialMediaBox />
 
       <form onSubmit={handleSubmit} className="contact__form">
+        <div className="contact__form__input tel">
+          <label htmlFor="tel"></label>
+          <input type="tel" id="tel" name="tel" autoComplete="off" />
+        </div>
+
         <div className={`contact__form__group ${isValidName ? "valid" : isValidName === false ? "invalid" : ""}`}>
           <label htmlFor="name">{translation("contact.form.name")}</label>
           <div className="contact__form__input__wrapper">
