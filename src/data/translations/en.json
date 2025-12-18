@@ -247,8 +247,8 @@
       "items": [
         {
           "year": "2006",
-          "title": "Hospitality Jobs",
-          "description": "Worked in various hospitality roles in Amsterdam.",
+          "title": "First hospitality job",
+          "description": "Worked in various hospitality venues in Amsterdam.",
           "icon": "utensils"
         },
         {
@@ -288,7 +288,7 @@
           "icon": "cheers"
         },
         {
-          "year": "2020",
+          "year": "2020-Present",
           "title": "Started Learning to Code",
           "description": "Began studying web development during the COVID lockdown period.",
           "icon": "code"

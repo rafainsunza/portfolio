@@ -59,6 +59,13 @@
       font-size: $font-size-sm;
     }
 
+    &__link {
+      transition: color 0.3s ease;
+      &:hover {
+        color: var(--primary-text);
+      }
+    }
+
     &__icon {
       display: flex;
       justify-content: center;

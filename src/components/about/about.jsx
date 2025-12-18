@@ -17,7 +17,6 @@ import {
   faLaptopCode,
   faMartiniGlassCitrus,
   faMugHot,
-  faRoute,
   faUmbrellaBeach,
   faUserTie,
   faUtensils,
@@ -177,21 +176,25 @@ const About = ({ mostVisitedSection }) => {
                   <div className="about__card__label">{content.label}</div>
                   {
                     <div className="about__card__value">
-                      {content.id === "baby"
-                        ? `${getBabyAge()} ${content.value}`
-                        : content.id === "screen"
-                        ? screenSize
-                        : content.id === "mouse"
-                        ? totalClicks
-                        : content.id === "clock"
-                        ? formatSessionTime(sessionTime)
-                        : content.id === "heart"
-                        ? !mostVisitedSection
-                          ? ""
-                          : mostVisitedSection === "hero"
-                          ? "Home"
-                          : translation(`${mostVisitedSection}.title`)
-                        : content.value}
+                      {content.id === "baby" ? (
+                        `${getBabyAge()} ${content.value}`
+                      ) : content.id === "screen" ? (
+                        screenSize
+                      ) : content.id === "mouse" ? (
+                        totalClicks
+                      ) : content.id === "clock" ? (
+                        formatSessionTime(sessionTime)
+                      ) : content.id === "heart" ? (
+                        !mostVisitedSection ? (
+                          ""
+                        ) : (
+                          <a href={`#${mostVisitedSection}`} className="about__card__link">
+                            {mostVisitedSection === "hero" ? "Home" : mostVisitedSection}
+                          </a>
+                        )
+                      ) : (
+                        content.value
+                      )}
                     </div>
                   }
                 </div>

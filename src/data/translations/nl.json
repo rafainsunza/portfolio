@@ -221,7 +221,7 @@
           },
           {
             "id": "mouse",
-            "label": "Geklikte dingen",
+            "label": "Aantal klikken",
             "icon": "mouse"
           },
           {
@@ -244,62 +244,62 @@
       "items": [
         {
           "year": "2006",
-          "title": "Hospitality Jobs",
-          "description": "Worked in various hospitality roles in Amsterdam.",
+          "title": "Eerste horeca baan",
+          "description": "Verschillende functies bekleed in verschillende horecazaken in Amsterdam.",
           "icon": "utensils"
         },
         {
           "year": "2007-2008",
-          "title": "Lived in Brazil",
-          "description": "Lived in Brazil for a year and worked part-time teaching English.",
+          "title": "In Brazilië gewoond",
+          "description": "Een jaar in Brazilië gewoond en parttime Engels les gegeven.",
           "icon": "teacher"
         },
         {
           "year": "2008-2010",
-          "title": "Hospitality",
-          "description": "Worked in multiple restaurants in Amsterdam.",
+          "title": "Horeca",
+          "description": "In meerdere restaurants in Amsterdam gewerkt.",
           "icon": "bell"
         },
         {
           "year": "2011-2014",
-          "title": "Bartender at NJOY Cocktailbar",
-          "description": "Started working in a top cocktail bar in Amsterdam.",
+          "title": "Bartender bij NJOY Cocktailbar",
+          "description": "Begonnen bij een top cocktailbar in Amsterdam.",
           "icon": "cocktail"
         },
         {
           "year": "2014-2015",
           "title": "Vila Kalango, Brazil",
-          "description": "Returned to Brazil for a year and worked at a boutique hotel.",
+          "description": "Terug naar Brazilië en een jaar gewerkt in een boutique hotel.",
           "icon": "beach"
         },
         {
           "year": "2015-2019",
           "title": "Bar Manager",
-          "description": "Started managing a top cocktail bar in Amsterdam.",
+          "description": "Bedrijfsleider geweest in een top cocktailbar in Amsterdam.",
           "icon": "tie"
         },
         {
-          "year": "2019-Present",
-          "title": "Head Bartender at Bar Carter",
-          "description": "Responsible for bar operations, training, and guest experience.",
+          "year": "2019-Heden",
+          "title": "Head Bartender bij Bar Carter",
+          "description": "Verantwoordelijk voor baroperaties, training en gastbeleving.",
           "icon": "cheers"
         },
         {
-          "year": "2020",
-          "title": "Started Learning to Code",
-          "description": "Began studying web development during the COVID lockdown period.",
+          "year": "2020-Heden",
+          "title": "Start met coderen leren",
+          "description": "Begonnen met webdevelopment tijdens de COVID-lockdown.",
           "icon": "code"
         },
         {
-          "year": "2021-Present",
-          "title": "Self-Employed Web Developer",
-          "description": "Worked on personal projects and freelance work focusing on JavaScript, Web Components, and React.",
+          "year": "2021-Heden",
+          "title": "Zelfstandige Web Developer",
+          "description": "Gewerkt aan persoonlijke projecten en freelance opdrachten met focus op JavaScript, Web Components en React.",
           "icon": "laptop"
         },
         {
           "year": "2024",
-          "title": "Internship at Wolfpack Agency",
-          "description": "Completed a web development internship focused on real-world front-end practices.",
+          "title": "Stage bij Wolfpack Agency",
+          "description": "Webdevelopment stage afgerond met focus op front-end praktijkervaring.",
           "icon": "folder"
         }
       ]
