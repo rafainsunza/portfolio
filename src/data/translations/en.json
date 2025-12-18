@@ -165,16 +165,16 @@
             "icon": "coffee"
           },
           {
+            "id": "music",
+            "label": "Passion for music",
+            "value": "it makes me code better",
+            "icon": "music"
+          },
+          {
             "id": "bjj",
             "label": "BJJ student",
             "value": "never not learning",
             "icon": "bjj"
-          },
-          {
-            "id": "football",
-            "label": "Football fan",
-            "value": "on the couch for every game",
-            "icon": "football"
           }
         ]
       },
@@ -232,6 +232,11 @@
             "id": "clock",
             "label": "Time spent here",
             "icon": "clock"
+          },
+          {
+            "id": "heart",
+            "label": "Favorite part of the page",
+            "icon": "heart"
           }
         ]
       }

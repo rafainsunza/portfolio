@@ -20,6 +20,8 @@ const App = () => {
   const menuButtonRef = useRef(null);
 
   const [activeSection, setActiveSection] = useState("hero");
+  const [sectionsVisited, setSectionsVisited] = useState([]);
+  const [mostVisitedSection, setMostVisitedSection] = useState("");
 
   const sectionRefs = {
     hero: useRef(null),
@@ -60,6 +62,7 @@ const App = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
+          setSectionsVisited((prev) => [...prev, entry.target.id]);
         }
       });
     };
@@ -72,6 +75,17 @@ const App = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const visitedSectionCount = sectionsVisited.reduce((acc, section) => {
+      acc[section] = (acc[section] || 0) + 1;
+      return acc;
+    }, {});
+
+    const sortedVisitedSectionCount = Object.entries(visitedSectionCount).sort((a, b) => b[1] - a[1]);
+
+    if (sortedVisitedSectionCount.length) setMostVisitedSection(sortedVisitedSectionCount[0][0]);
+  }, [sectionsVisited]);
 
   return (
     <>
@@ -106,7 +120,7 @@ const App = () => {
         <section id="about" ref={sectionRefs.about}>
           <h1 className="section__title">{translation("about.title")}</h1>
 
-          <About />
+          <About mostVisitedSection={mostVisitedSection} />
         </section>
 
         <section id="contact" ref={sectionRefs.contact}>

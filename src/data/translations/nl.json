@@ -147,40 +147,40 @@
   },
 
   "about": {
-    "title": "About me",
+    "title": "Over mij",
     "cards": [
       {
-        "title": "A bit about me",
+        "title": "Mijn dagelijks leven",
         "content": [
           {
             "id": "baby",
-            "label": "Currently raising a tiny human",
-            "value": "months old",
+            "label": "Een klein mensje aan het opvoeden",
+            "value": "maanden oud",
             "icon": "baby"
           },
           {
             "id": "coffee",
-            "label": "Powered by caffeine",
-            "value": "...most days",
+            "label": "Mede mogelijke gemaakt door koffie",
+            "value": "...op de meeste dagen",
             "icon": "coffee"
+          },
+          {
+            "id": "music",
+            "label": "Passie voor muziek",
+            "value": "helpt me beter coderen",
+            "icon": "music"
           },
           {
             "id": "bjj",
             "label": "BJJ student",
-            "value": "never not learning",
+            "value": "nooit niet aan het leren",
             "icon": "bjj"
-          },
-          {
-            "id": "football",
-            "label": "Football fan",
-            "value": "on the couch for every game",
-            "icon": "football"
           }
         ]
       },
 
       {
-        "title": "My toolkit",
+        "title": "Mijn tools",
         "content": [
           {
             "id": "js",
@@ -212,22 +212,28 @@
       },
 
       {
-        "title": "But enough about me, here's a bit about you...",
+        "title": "Maar genoeg over mij, even over jou",
         "content": [
           {
             "id": "screen",
-            "label": "Screen size",
+            "label": "Scherm grootte",
             "icon": "screen"
           },
           {
             "id": "mouse",
-            "label": "Things clicked",
+            "label": "Geklikte dingen",
             "icon": "mouse"
           },
           {
             "id": "clock",
-            "label": "Time spent here",
+            "label": "Tijd hier besteed",
             "icon": "clock"
+          },
+
+          {
+            "id": "heart",
+            "label": "Favoriete gedeelte van de pagina",
+            "icon": "heart"
           }
         ]
       }

@@ -12,10 +12,12 @@ import {
   faDisplay,
   faDumbbell,
   faFolderTree,
-  faFutbol,
+  faHeadphones,
+  faHeart,
   faLaptopCode,
   faMartiniGlassCitrus,
   faMugHot,
+  faRoute,
   faUmbrellaBeach,
   faUserTie,
   faUtensils,
@@ -26,7 +28,7 @@ import CustomIcon from "../custom-icon/custom-icon";
 import { useEffect, useRef, useState } from "react";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 
-const About = () => {
+const About = ({ mostVisitedSection }) => {
   const { translation } = useTranslations();
 
   const timelineItems = translation("about.timeline.items");
@@ -55,7 +57,7 @@ const About = () => {
     baby: faBaby,
     coffee: faMugHot,
     training: faDumbbell,
-    football: faFutbol,
+    music: faHeadphones,
     js: faJs,
     react: faReact,
     sass: faSass,
@@ -65,6 +67,7 @@ const About = () => {
     screen: faDisplay,
     mouse: faComputerMouse,
     clock: faClock,
+    heart: faHeart,
   };
 
   const getBabyAge = () => {
@@ -182,6 +185,12 @@ const About = () => {
                         ? totalClicks
                         : content.id === "clock"
                         ? formatSessionTime(sessionTime)
+                        : content.id === "heart"
+                        ? !mostVisitedSection
+                          ? ""
+                          : mostVisitedSection === "hero"
+                          ? "Home"
+                          : translation(`${mostVisitedSection}.title`)
                         : content.value}
                     </div>
                   }
