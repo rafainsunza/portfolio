@@ -251,12 +251,15 @@
 .button__captcha__wrapper {
   display: flex;
   flex-direction: column;
-  gap: $space-md;
 
   @media (min-width: $breakpoint-md) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    gap: $space-md;
   }
 }
 
