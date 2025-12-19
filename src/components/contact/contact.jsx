@@ -5,11 +5,16 @@ import SocialMediaBox from "../social-media-box/social-media-box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faSpinner, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import validator from "validator";
 
 const Contact = () => {
   const { translation } = useTranslations();
+
+  const captchaRef = useRef(null);
+  const captchaId = useRef(null);
+
+  const [captchaSolved, setCaptchaSolved] = useState(false);
 
   const [name, setName] = useState("");
   const [nameTouched, setNameTouched] = useState(false);
@@ -36,6 +41,9 @@ const Contact = () => {
 
     const form = new FormData(e.target);
     const honeyPotValue = form.get("tel");
+
+    const captchaToken = window.grecaptcha.getResponse(captchaId.current);
+    if (!captchaToken) return;
 
     if (!isValid || isSending || honeyPotValue) return;
 
@@ -88,6 +96,10 @@ const Contact = () => {
       }, 5000);
     } finally {
       setIsSending(false);
+
+      if (window.grecaptcha && captchaId.current !== null) {
+        window.grecaptcha.reset(captchaId.current);
+      }
     }
   };
 
@@ -154,6 +166,27 @@ const Contact = () => {
       setIsValid(true);
     } else setIsValid(false);
   }, [isValidName, isValidEmail, messageLength]);
+
+  // CAPTCHA
+  useEffect(() => {
+    if (window.grecaptcha && captchaRef.current && captchaId.current === null) {
+      captchaId.current = window.grecaptcha.render(captchaRef.current, {
+        sitekey: "6LemqS8sAAAAAJJy-zZD_rttwBAi8kFuvVOO2NU-",
+        theme: "dark",
+        callback: () => {
+          setCaptchaSolved(true);
+        },
+
+        "expired-callback": () => {
+          setCaptchaSolved(false);
+        },
+
+        "error-callback": () => {
+          setCaptchaSolved(false);
+        },
+      });
+    }
+  }, []);
 
   return (
     <div className="contact">
@@ -237,7 +270,7 @@ const Contact = () => {
         <div className="contact__form__group">
           <label htmlFor="message" className="contact__form__group__message__label">
             {translation("contact.form.message")}
-            <span className="contact__form__message__count">
+            <span className={`contact__form__message__count ${messageLength >= minMessageLength && "valid"}`}>
               {messageLength} / {maxMessageLength}
             </span>
           </label>
@@ -255,21 +288,25 @@ const Contact = () => {
           </div>
         </div>
 
-        <button
-          type="submit"
-          className={`contact__form__submit-button ${isValid ? "active" : ""}`}
-          disabled={!isValid || isSending}
-        >
-          {!isSending ? (
-            <>
-              {translation("contact.form.submit")} <FontAwesomeIcon icon={faPaperPlane} />
-            </>
-          ) : (
-            <div className="contact__form__submit-button__loader">
-              <FontAwesomeIcon icon={faSpinner} />
-            </div>
-          )}
-        </button>
+        <div className="button__captcha__wrapper">
+          <div className={"captcha__wrapper"} ref={captchaRef}></div>
+
+          <button
+            type="submit"
+            className={`contact__form__submit-button ${isValid && captchaSolved ? "active" : ""}`}
+            disabled={!isValid || isSending || !captchaSolved}
+          >
+            {!isSending ? (
+              <>
+                {translation("contact.form.submit")} <FontAwesomeIcon icon={faPaperPlane} />
+              </>
+            ) : (
+              <div className="contact__form__submit-button__loader">
+                <FontAwesomeIcon icon={faSpinner} />
+              </div>
+            )}
+          </button>
+        </div>
 
         {successMessage && (
           <div className={`contact__form__success__message ${submitted ? "success" : "fail"}`}>

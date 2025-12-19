@@ -4,6 +4,7 @@
   @media (min-width: $breakpoint-lg) {
     display: grid;
     align-content: center;
+    column-gap: $space-xxl;
     grid-template-areas:
       "title form"
       "subtitle form"
@@ -66,6 +67,11 @@
       margin: 0;
     }
 
+    &__message__count.valid {
+      color: green;
+      font-weight: bold;
+    }
+
     &__group {
       & label {
         font-size: $font-size-xs;
@@ -84,10 +90,6 @@
           justify-content: space-between;
           margin-bottom: 3px;
         }
-
-        &__count {
-          color: var(--secondary-text);
-        }
       }
 
       &.invalid {
@@ -105,10 +107,6 @@
 
       &.valid {
         & .contact__form__input {
-          background-color: #ccffcf;
-          border: 2px solid green;
-          color: #1a1a18;
-
           &__icon,
           &__error-message {
             color: green;
@@ -122,16 +120,13 @@
       border: 1px solid var(--border);
       border-radius: 2px;
       width: 100%;
-      background-color: var(--input-background);
-      color: var(--primary-text);
+      color: #181818;
       transition: transform 0.2s ease, background-color 0.3s ease;
 
       &:focus,
       &:active {
         outline: none;
-        background-color: white;
         transform: scale(1.01);
-        color: #1a1a18;
       }
 
       &.tel {
@@ -157,23 +152,31 @@
     }
 
     &__submit-button {
-      max-width: 200px;
+      width: 200px;
       height: 40px;
       border-radius: 20px;
       border: 0;
-      font-weight: 600;
+      margin: $space-sm 0;
+      font-weight: 500;
       font-size: $font-size-md;
-      background-color: var(--accent);
-      color: white;
-      opacity: 0.2;
-      transition: opacity 0.3s ease, filter 0.3s ease;
+      background-color: var(--container-background);
+      color: var(--border);
+      border: 2px solid var(--border);
+      transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease, filter 0.3s ease;
+
+      @media (min-width: $breakpoint-md) {
+        margin: 0;
+      }
 
       &.active {
         opacity: 1;
         cursor: pointer;
+        background-color: var(--accent);
+        color: #f1f1f1;
+        border-color: var(--accent);
 
         &:hover {
-          filter: brightness(125%);
+          filter: brightness(110%);
         }
       }
 
@@ -243,6 +246,22 @@
       }
     }
   }
+}
+
+.button__captcha__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.captcha__wrapper {
+  margin-top: $space-xxs;
 }
 
 @keyframes spin {
