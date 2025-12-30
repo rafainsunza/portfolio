@@ -7,7 +7,14 @@ const MenuButton = React.forwardRef(({ isToggled, setIsToggled }, ref) => {
   };
 
   return (
-    <button className={`menu-button ${isToggled ? "toggled" : ""}`} onClick={handleClick} ref={ref}>
+    <button
+      className={`menu-button ${isToggled ? "toggled" : ""}`}
+      onClick={handleClick}
+      ref={ref}
+      aria-haspopup="true"
+      aria-controls="page-navigation"
+      aria-expanded={isToggled}
+    >
       <span className="menu-button__bar"></span>
       <span className="menu-button__bar"></span>
       <span className="menu-button__bar"></span>

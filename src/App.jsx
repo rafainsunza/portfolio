@@ -34,12 +34,23 @@ const App = () => {
   useEffect(() => {
     if (!mobileNavIsOpen) return;
 
+    const closeMobileNavOnESC = (e) => {
+      if (e.key === "Escape") {
+        setMobileNavIsOpen(false);
+        menuButtonRef?.current?.focus();
+      }
+    };
+
     const handleOutsideClick = (e) => {
       if (!navbarRef.current.contains(e.target) && !menuButtonRef.current.contains(e.target)) setMobileNavIsOpen(false);
     };
 
+    document.addEventListener("keydown", closeMobileNavOnESC);
     document.addEventListener("mousedown", handleOutsideClick, true);
-    return () => document.removeEventListener("mousedown", handleOutsideClick, true);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick, true);
+      document.removeEventListener("keydown", closeMobileNavOnESC);
+    };
   }, [mobileNavIsOpen]);
 
   useEffect(() => {
@@ -90,7 +101,7 @@ const App = () => {
   return (
     <>
       <header>
-        <a href="#hero">
+        <a href="#hero" inert={window.innerWidth < 880 && mobileNavIsOpen} aria-label="Home">
           <Branding hideOnDesktop />
         </a>
 
@@ -99,8 +110,8 @@ const App = () => {
         <MenuButton isToggled={mobileNavIsOpen} setIsToggled={setMobileNavIsOpen} ref={menuButtonRef} />
       </header>
 
-      <main>
-        <section id="hero" ref={sectionRefs.hero}>
+      <main inert={window.innerWidth < 880 && mobileNavIsOpen}>
+        <section id="hero" ref={sectionRefs.hero} aria-label="Home section">
           <Hero />
         </section>
 
@@ -127,7 +138,7 @@ const App = () => {
           <Contact />
         </section>
       </main>
-      <footer></footer>
+      <footer inert={window.innerWidth < 880 && mobileNavIsOpen}></footer>
     </>
   );
 };
